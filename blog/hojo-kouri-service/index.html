@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小売業・サービス業向け補助金の選び方と活用事例   Well Consultant</title>
+</head>
+<body>
+
+<style>
+
+/* WP変数リセット */
+:root,html,body{--wp--style--global--content-size:100%!important;--wp--style--global--wide-size:100%!important;--wp--style--root--padding-top:0!important;--wp--style--root--padding-right:0!important;--wp--style--root--padding-bottom:0!important;--wp--style--root--padding-left:0!important;}
+/* ボディリセット */
+body,body.page,body.home,body.single,body.single-post{margin:0!important;padding:0!important;padding-top:0!important;}
+/* WPブロック全幅化 */
+.wp-site-blocks,.wp-site-blocks>main,main.wp-block-group,.wp-block-group.has-global-padding,.wp-block-post-content,.entry-content,.wp-block-group.alignfull,.wp-block-group-is-layout-constrained,.wp-block-post-content-is-layout-constrained,.wp-block-html,article.post,article.page,.post,.hentry,.page{max-width:100%!important;width:100%!important;margin:0!important;padding:0!important;}
+.has-global-padding,.has-global-padding>.alignfull{padding-left:0!important;padding-right:0!important;}
+/* WPテーマヘッダー・ナビ・サイドバー非表示 */
+.wp-block-post-title,.entry-header,.entry-title,header.entry-header,.wp-block-template-part header,header.wp-block-template-part,.wp-site-blocks>header,.wp-block-site-title,.wp-block-navigation,.wp-block-template-part[data-area="header"],aside.sidebar,.widget-area,.sidebar,#secondary{display:none!important;}
+/* WP投稿メタ情報非表示（執筆者・カテゴリ等） */
+.entry-meta,.post-meta,.byline,.posted-on,.cat-links,.author,.tags-links,.comments-link,.wp-block-post-author,.wp-block-post-author__bio,.wp-block-post-author-name,.wp-block-post-date,.wp-block-post-terms,.wp-block-post-excerpt,p.has-text-align-right,.screen-reader-text{display:none!important;}
+/* WPテンプレート上部の余分なpadding/margin除去（inline style対策） */
+main.wp-block-group[style]{margin-top:0!important;padding-top:0!important;}
+.wp-block-group.alignfull[style]{padding-top:0!important;padding-bottom:0!important;}
+.wp-block-group.has-accent-4-color{display:none!important;}
+/* WP adminbar非表示 */
+#wpadminbar,#wpadminbar *{display:none!important;}
+html{margin-top:0!important;}
+/* WP footer非表示 */
+.wp-site-blocks>footer,.wp-block-template-part[data-area="footer"],footer.wp-block-template-part{display:none!important;}
+footer:not(.custom-footer){display:none!important;}
+/* WPテーマ投稿ナビゲーション非表示 */
+.post-navigation,.posts-navigation,.navigation.post-navigation,.navigation.posts-navigation,.nav-previous,.nav-next,.wp-block-query-pagination,.wp-block-query-pagination-next,.wp-block-query-pagination-previous,.more-link,a.more-link{display:none!important;}
+/* WP投稿ナビゲーションリンクブロック（実際に使われているクラス） */
+.wp-block-post-navigation-link,.post-navigation-link-previous,.post-navigation-link-next,nav[aria-label="投稿ナビゲーション"]{display:none!important;}
+/* 投稿をさらに読み込む（WPクエリブロック） */
+.wp-block-query{display:none!important;}
+/* WPコメント非表示 */
+#comments,.comments-area,.comment-respond,.wp-block-comments,.wp-comment-respond,.comment-list,.comment-form,.comments-pagination{display:none!important;}
+/* is-layout-constrained: wp-block-htmlブロックの幅制限を解除 */
+.is-layout-constrained>.wp-block-html,.is-layout-constrained>.wp-block-group:not(.alignwide):not(.alignfull){max-width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important;}
+/* 重複監修者ボックス（id="supervisor"のテンプレート部分）を非表示 */
+#supervisor{display:none!important;}
+/* === メニューバー上の隙間を消す（WP admin bar + wp-site-blocksの上余白を完全除去） === */
+html,html[lang]{margin-top:0!important;padding-top:0!important;}
+body,body.admin-bar,body.logged-in,body.wp-singular,body.single,body.single-post{margin:0!important;margin-top:0!important;padding:0!important;padding-top:0!important;}
+.wp-site-blocks{padding-top:0!important;margin-top:0!important;}
+.wp-site-blocks>main,.wp-site-blocks>main.wp-block-group,.wp-site-blocks>.wp-block-group,.wp-site-blocks>article,.wp-site-blocks>.wp-block-post-content{margin-top:0!important;margin-block-start:0!important;padding-top:0!important;}
+:where(.wp-site-blocks)>*,:where(.wp-site-blocks)>:first-child{margin-block-start:0!important;margin-top:0!important;}
+:where(.is-layout-flow)>*,:where(.is-layout-flow)>:first-child,:where(.is-layout-constrained)>*,:where(.is-layout-constrained)>:first-child{margin-block-start:0!important;margin-top:0!important;}
+@media screen and (min-width:783px){html{margin-top:0!important;}}
+/* === アイキャッチ画像のサイズ制限（デカすぎ対策） === */
+.article-hero{max-height:360px!important;overflow:hidden!important;border-radius:10px!important;margin:18px 0 28px!important;}
+.article-hero img{width:100%!important;height:100%!important;max-height:360px!important;object-fit:cover!important;display:block!important;}
+@media(max-width:768px){.article-hero{max-height:220px!important;}.article-hero img{max-height:220px!important;}}
+/* === サイドバージャンルカード画像サイズ強制（WPテーマが上書きするのを防ぐ） === */
+.sidebar-genre-img{height:90px!important;overflow:hidden!important;position:relative!important;}
+.sidebar-genre-img img{width:100%!important;height:100%!important;max-height:90px!important;object-fit:cover!important;display:block!important;}
+/* === 補助金フィードのサムネサイズ制限 === */
+.sidebar-feed{padding:12px!important;}
+.sidebar-feed img{width:100%!important;max-width:260px!important;height:auto!important;max-height:140px!important;display:block!important;margin:0 auto 8px!important;object-fit:cover!important;border-radius:4px!important;}
+/* === サイドバー上の見出し（補助金フィード等）を表示強制 === */
+.sidebar-section-title{display:block!important;visibility:visible!important;opacity:1!important;font-size:16px!important;font-weight:700!important;color:#1a3a5c!important;letter-spacing:0.02em!important;margin-bottom:14px!important;text-transform:none!important;line-height:1.4!important;}
+
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif; font-size: 16px; line-height: 1.85; color: #222; background: #f5f7fa; }
+    .breadcrumb { background: #e8edf3; padding: 10px 0; font-size: 13px; }
+    .breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    .breadcrumb li + li::before { content: '>'; margin-right: 4px; color: #888; }
+    .breadcrumb a { color: #1a3a5c; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article-figure { margin: 28px 0; }
+    .article-figure img { width: 100%; height: 240px; object-fit: cover; border-radius: 8px; display: block; }
+    .article-figure figcaption { font-size: 13px; color: #666; text-align: center; margin-top: 8px; }
+    .article-header { margin-bottom: 32px; }
+    .article-cat { display: inline-block; background: #d35400; color: #fff; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 3px; margin-bottom: 12px; }
+    .article-title { font-size: 28px; font-weight: 900; color: #1a3a5c; line-height: 1.4; margin-bottom: 12px; }
+    .article-meta { font-size: 13px; color: #666; display: flex; gap: 16px; flex-wrap: wrap; }
+    .article-meta time { color: #1a3a5c; }
+    .article-body { color: #333; }
+    .article-body p { margin-bottom: 1.4em; text-align: left; }
+    .article-body h2 { font-size: 22px; font-weight: 900; color: #1a3a5c; border-left: 5px solid #d35400; padding: 6px 0 6px 14px; margin: 48px 0 20px; line-height: 1.4; }
+    .article-body h3 { font-size: 18px; font-weight: 700; color: #1a3a5c; border-bottom: 2px solid #c8d8e8; padding-bottom: 6px; margin: 32px 0 16px; }
+    .lead-box { background: #eaf0f8; border-left: 4px solid #1a3a5c; padding: 20px 24px; border-radius: 4px; margin-bottom: 32px; }
+    .lead-box p { margin-bottom: 0; color: #1a3a5c; font-weight: 500; }
+    .point-box { background: #fff8f3; border: 2px solid #d35400; border-radius: 6px; padding: 20px 24px; margin: 24px 0; }
+    .point-box-title { font-size: 14px; font-weight: 700; color: #d35400; margin-bottom: 10px; }
+    .point-box ul { padding-left: 1.4em; }
+    .point-box li { margin-bottom: 6px; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+    .compare-table thead tr { background: #1a3a5c; color: #fff; }
+    .compare-table th { padding: 12px 16px; text-align: center; font-weight: 700; }
+    .compare-table td { padding: 12px 16px; border-bottom: 1px solid #d0dcea; text-align: left; vertical-align: top; }
+    .compare-table tr:nth-child(even) td { background: #f0f5fa; }
+    .compare-table td:first-child { font-weight: 700; color: #1a3a5c; width: 24%; }
+    .type-list { list-style: none; padding: 0; margin: 16px 0; }
+    .type-list li { padding: 14px 16px; border-left: 4px solid #1a3a5c; background: #f5f8fc; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+    .type-list li strong { color: #1a3a5c; display: block; margin-bottom: 4px; }
+    .case-box { background: #f0f8f0; border: 2px solid #2a7d32; border-radius: 6px; padding: 20px 24px; margin: 24px 0; }
+    .case-box-title { font-size: 14px; font-weight: 700; color: #2a7d32; margin-bottom: 10px; }
+    .case-box ul { padding-left: 1.4em; }
+    .case-box li { margin-bottom: 6px; }
+    .faq-section { margin: 40px 0; }
+    .faq-item { border: 1px solid #c8d8e8; border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+    .faq-q { background: #1a3a5c; color: #fff; padding: 14px 18px; font-weight: 700; font-size: 15px; display: flex; gap: 10px; align-items: flex-start; }
+    .faq-q .faq-icon { flex-shrink: 0; color: #d35400; font-size: 18px; font-weight: 900; }
+    .faq-a { padding: 16px 18px; background: #fff; font-size: 15px; display: flex; gap: 10px; align-items: flex-start; }
+    .faq-a .faq-icon { flex-shrink: 0; color: #1a3a5c; font-size: 18px; font-weight: 900; }
+    .faq-a p { margin-bottom: 0; }
+    .supervisor-box { display: flex; gap: 20px; align-items: flex-start; border: 1px solid #c8d8e8; border-radius: 8px; padding: 24px; margin: 40px 0; background: #f5f8fc; }
+    .supervisor-info { flex: 1; }
+    .supervisor-label { font-size: 11px; color: #888; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .supervisor-name { font-size: 18px; font-weight: 900; color: #1a3a5c; margin-bottom: 4px; }
+    .supervisor-title { font-size: 13px; color: #555; margin-bottom: 10px; }
+    .supervisor-bio { font-size: 14px; color: #444; line-height: 1.7; margin-bottom: 0; }
+    .related-section { margin: 48px 0 32px; }
+    .related-section h2 { font-size: 20px; font-weight: 900; color: #1a3a5c; border-left: 5px solid #d35400; padding: 4px 0 4px 14px; margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { border: 1px solid #c8d8e8; border-radius: 6px; overflow: hidden; text-decoration: none; color: inherit; background: #fff; display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(26,58,92,0.12); }
+    .related-card-img { width: 100%; height: 120px; background: #1a3a5c; display: flex; align-items: center; justify-content: center; }
+    .related-card-img span { color: #fff; font-size: 13px; font-weight: 700; text-align: center; padding: 8px; line-height: 1.5; }
+    .related-card-body { padding: 14px 16px; }
+    .related-card-cat { font-size: 11px; color: #d35400; font-weight: 700; margin-bottom: 6px; }
+    .related-card-title { font-size: 15px; font-weight: 700; color: #1a3a5c; line-height: 1.4; }
+  #wpadminbar{display:none!important;}html{margin-top:0!important;}
+@media (max-width: 880px) {
+  .blog-nav .nav-links a:not(.nav-cta) { display: none !important; }
+}
+
+
+    footer { background: #1f2937; color:#fff; padding: 44px 24px 24px; }
+    .footer-inner { max-width: 880px; margin: 0 auto; text-align:center;}
+    .footer-nav { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; justify-content: center; }
+    .footer-nav a { font-size: 13px; color:#fff; text-decoration: none; }
+    .footer-nav a:hover { color: #fff; }
+    .footer-legal { text-align: center; display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 16px; }
+    .footer-legal a { font-size: 12px; color:#ccc; text-decoration: none; }
+    .footer-legal a:hover { color: #fff; }
+    .footer-copy { font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; color:#aaa; }
+  
+
+    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background:#1a1a1a; }
+    .blog-nav .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 62px; }
+    .blog-nav .nav-logo { color: #fff; font-weight: bold; font-size: 14px; text-decoration: none; }
+    .blog-nav .nav-links { display: flex; align-items: center; gap: 24px; }
+    .blog-nav .nav-links a { color:#fff; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+    .blog-nav .nav-links a:hover { color: #fff; }
+    .blog-nav .nav-cta { background: #d35400; color: #fff !important; padding: 8px 20px; border-radius: 4px; font-weight: bold; font-size: 13px; }
+    .blog-nav .nav-cta:hover { background: #b84600 !important; }
+    .blog-nav-spacer { height: 62px; }
+  
+
+    .blog-core-offer { background: #f5f7fa; padding: 28px 20px; margin: 24px auto 0; max-width: 1160px; border-radius: 8px; }
+    .blog-core-offer h2 { text-align: center; font-size: 22px; font-weight: 900; color: #1a3a5c; margin-bottom: 32px; border: none; padding: 0; }
+    .blog-core-offer-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 100%; margin: 0; align-items: stretch; }
+    .blog-core-card { background: #fff; border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+    .blog-core-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.14); }
+    .blog-core-thumb { position: relative; }
+    .blog-core-thumb img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .blog-core-thumb-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 12px; }
+    .blog-core-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .blog-core-card-body h3 { font-size: 15px; font-weight: 900; color: #1a3a5c; margin-bottom: 10px; border: none; padding: 0; }
+    .blog-core-card-body p { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+    .blog-core-card-cta { display: block; margin-top: auto; background: #d35400; color: #fff; text-align: center; padding: 10px 8px; border-radius: 4px; font-size: 13px; font-weight: 700; line-height: 1.4; }
+    @media(max-width:680px) { .blog-core-offer-cards { grid-template-columns: 1fr; } }
+  
+
+    .page-layout { display: flex!important; flex-direction: row!important; gap: 32px; max-width: 1160px; margin: 0 auto; padding: 32px 20px 60px; align-items: flex-start; }
+    .main-wrap { flex: 1!important; min-width: 0!important; min-width: 0; padding: 0; }
+    .blog-sidebar { width: 260px!important; flex-shrink: 0!important; flex-shrink: 0; position: sticky; top: 78px; }
+    .sidebar-section-title { font-size: 12px; font-weight: 700; color: #888; letter-spacing: 0.08em; margin-bottom: 12px; text-transform: uppercase; }
+    .sidebar-genre-card { display: block; text-decoration: none; border-radius: 6px; overflow: hidden; margin-bottom: 10px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: box-shadow 0.2s; }
+    .sidebar-genre-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .sidebar-genre-img { position: relative; height: 90px; overflow: hidden; }
+    .sidebar-genre-img img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar-genre-badge { position: absolute; bottom: 0; left: 0; right: 0; padding: 4px 8px; font-size: 11px; font-weight: 700; color: #fff; }
+    .sidebar-genre-badge.orange { background: rgba(211,84,0,0.9); }
+    .sidebar-genre-badge.navy { background: rgba(26,58,92,0.9); }
+    .sidebar-genre-badge.green { background: rgba(46,125,50,0.9); }
+    .sidebar-genre-body { padding: 10px 12px; }
+    .sidebar-genre-body p { font-size: 12px; color: #555; line-height: 1.5; margin-bottom: 6px; }
+    .sidebar-genre-link { font-size: 12px; font-weight: 700; color: #1a3a5c; text-align: right; display: block; }
+    .sidebar-feed { display: block; text-decoration: none; background: #f0f4f8; border: 1px solid #b8ccdf; border-radius: 6px; padding: 12px 16px; margin-bottom: 10px; font-size: 13px; font-weight: 700; color: #1a3a5c; text-align: center; transition: background 0.2s; }
+    .sidebar-feed:hover { background: #dce6f0; }
+    .sidebar-consult { display: block; text-decoration: none; background: #d35400; color: #fff; border-radius: 6px; padding: 14px 16px; font-size: 14px; font-weight: 700; text-align: center; transition: background 0.2s; }
+    .sidebar-consult:hover { background: #b84600; }
+    @media(max-width:900px) { .page-layout { flex-direction: column; } .blog-sidebar { width: 100%; position: static; } }
+    @media(max-width:880px) { .article-title { font-size: 22px; } .related-grid { grid-template-columns: 1fr; } .supervisor-box { flex-direction: column; } .compare-table { font-size: 13px; } .compare-table th, .compare-table td { padding: 10px; } }
+  
+
+/* MOBILE_MENU_v1 */
+.nav-hamburger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;padding:4px 10px;line-height:1;margin-left:8px;}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#1a1a1a;flex-direction:column;padding:8px 24px 20px;z-index:99;border-top:1px solid #333;box-shadow:0 6px 16px rgba(0,0,0,0.4);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid #333;font-size:14px;}
+.mobile-menu a:last-child{border-bottom:0;}
+.mobile-menu .nav-cta{background:#d35400;text-align:center;border-radius:4px;font-weight:bold;margin-top:10px;border:0!important;padding:14px 0;}
+@media(max-width:880px){.nav-hamburger{display:inline-block!important;}}
+/* MOBILE_SIDEBAR_HIDE_v1 */
+@media(max-width:880px){
+  .blog-sidebar{display:none!important;}
+  .page-layout{display:block!important;flex-direction:column!important;}
+  .main-wrap{width:100%!important;max-width:100%!important;flex:none!important;}
+}
+
+
+
+/* === layout force override (Grid方式 / sticky対応) === */
+.page-layout{display:grid!important;grid-template-columns:minmax(0,1fr) 260px!important;gap:32px!important;align-items:start!important;width:100%!important;max-width:1160px!important;margin:0 auto!important;padding:0 20px 60px!important;box-sizing:border-box!important;overflow:visible!important;}
+.main-wrap{min-width:0!important;visibility:visible!important;opacity:1!important;overflow:visible!important;}
+.blog-sidebar{width:260px!important;position:sticky!important;top:78px!important;align-self:start!important;max-height:calc(100vh - 90px)!important;overflow-y:auto!important;}
+.blog-nav-spacer{display:none!important;}
+/* CORE OFFER とフッターも本文と同じ幅で中央揃え */
+.blog-core-offer{max-width:1160px!important;margin:40px auto 20px!important;padding:40px 20px!important;box-sizing:border-box!important;}
+.blog-core-offer-cards{max-width:1120px!important;margin:0 auto!important;}
+.custom-footer .footer-inner{max-width:1160px!important;margin:0 auto!important;}
+@media(max-width:900px){.page-layout{display:block!important;padding:0 16px 40px!important;}.main-wrap{display:block!important;width:100%!important;padding-right:0!important;}.blog-sidebar{display:block!important;width:100%!important;position:static!important;max-height:none!important;overflow:visible!important;}.blog-core-offer{padding:24px 16px!important;}}
+
+</style>
+<nav class="blog-nav">
+  <div class="nav-inner">
+    <a href="https://fp-1.info/hojokin/" class="nav-logo">補助金活用型経営を進めるガイド</a>
+    <div class="nav-links">
+      <a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <button class="nav-hamburger" aria-label="メニュー">☰</button><a href="https://fp-1.info/hojokin/#cta" class="nav-cta">無料相談</a>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+<a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <a href="https://fp-1.info/hojokin/#cta" class="nav-cta">無料相談</a>
+</div>
+<div class="blog-nav-spacer"></div>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="https://fp-1.info/hojokin/">ホーム</a></li>
+    <li><a href="./">ブログ</a></li>
+    <li>小売業・サービス業向け補助金の選び方と活用事例</li>
+  </ol>
+</nav>
+
+<div class="page-layout" style="display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start;width:100%;max-width:1160px;margin:0 auto;padding:0 20px 60px;box-sizing:border-box;overflow:visible;">
+<div class="main-wrap" style="min-width:0;visibility:visible;opacity:1;overflow:visible;">
+
+  <header class="article-header">
+    <span class="article-cat">経営・資金調達・節税</span>
+    <h1 class="article-title">小売業・サービス業向け補助金の選び方と活用事例</h1>
+    <figure class="article-hero" style="margin:18px 0 28px;">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-sell-2329.png" alt="小売業・サービス業の補助金活用" style="width:100%;max-width:880px;height:auto;border-radius:8px;display:block;">
+    </figure>
+    <div class="article-meta">
+      <span>公開日：<time datetime="2026-05-17">2026年5月17日</time></span>
+      <span>更新日：<time datetime="2026-05-17">2026年5月17日</time></span>
+      <span>Well Consultant 補助金支援チーム</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <div class="lead-box">
+      <p>「小売業やサービス業でも補助金は使えるの？」という問い合わせは少なくありません。結論として、製造業だけでなく、小売業・飲食業・美容業・整体院・学習塾など幅広いサービス業が補助金の対象になることがあります。この記事では、業種別の選び方と活用事例を整理します。</p>
+    </div>
+
+    <p>補助金は「製造業向け」というイメージを持たれることがありますが、実際には小売業・サービス業向けの制度も数多く存在します。特に小規模事業者持続化補助金はサービス業・小売業を主な対象として設計されており、店舗改装からWebマーケティングまで幅広い経費が対象になることがあります。</p>
+
+    <p>また、IT導入補助金は業種を問わず活用できる制度で、予約管理システム・POSレジ・顧客管理ソフトなどサービス業に直結するツールの導入費用を補助対象にできることがあります。自社の目的に合った制度を選ぶことが、補助金活用の第一歩です。</p>
+
+    <h2>小売業・サービス業が使える主な補助金の全体像</h2>
+
+    <figure class="article-figure">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-apply-2342.png" alt="小売業・サービス業向け補助金の全体像">
+      <figcaption>業種・目的に合った補助金を選ぶことが採択への近道です</figcaption>
+    </figure>
+
+    <p>小売業・サービス業が活用できる主な補助金を目的別に整理します。自社が何を実現したいのかを先に決めてから、対応する制度を選ぶ順序が基本です。</p>
+
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>補助金名</th>
+            <th>主な目的</th>
+            <th>補助率の目安</th>
+            <th>向いている業者</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>持続化補助金</td>
+            <td>販路開拓・集客強化</td>
+            <td>2/3</td>
+            <td>小規模な小売・サービス業全般</td>
+          </tr>
+          <tr>
+            <td>IT導入補助金</td>
+            <td>業務効率化・DX推進</td>
+            <td>1/2〜3/4</td>
+            <td>予約・在庫・POSのデジタル化を検討中の事業者</td>
+          </tr>
+          <tr>
+            <td>ものづくり補助金</td>
+            <td>サービス革新・設備投資</td>
+            <td>1/2〜2/3</td>
+            <td>新サービス開発や機器導入で差別化を図りたい事業者</td>
+          </tr>
+          <tr>
+            <td>雇用関連の助成金</td>
+            <td>人材確保・育成・処遇改善</td>
+            <td>制度による</td>
+            <td>正社員化・育休推進・研修強化を進めたい事業者</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>参考：中小企業庁「ミラサポplus」（<a href="https://mirasapo-plus.go.jp/" target="_blank" rel="noopener">https://mirasapo-plus.go.jp/</a>）では、業種・規模・目的から補助金を絞り込めます。申請前に最新情報の確認をおすすめします。</p>
+
+    <h2>持続化補助金――小売業・サービス業で最も使いやすい制度</h2>
+
+    <p>小規模事業者持続化補助金は、商工会・商工会議所の管轄下に置かれた制度で、従業員数が少ない小売業・サービス業者が販路開拓や集客強化に取り組む費用を補助します。補助率2/3・補助上限額は申請枠により異なりますが、比較的取り組みやすい規模感の制度として知られています。</p>
+
+    <h3>小売業での持続化補助金活用例</h3>
+
+    <ul class="type-list">
+      <li>
+        <strong>ECサイト・ネットショップの開設・リニューアル</strong>
+        実店舗に加えてオンライン販売を始めたい場合、ECサイト構築費用・商品撮影費用・システム費用が対象になることがあります。ただし、継続的な運用費（月額費用）は補助対象外になることが多いため注意が必要です。
+      </li>
+      <li>
+        <strong>店頭POPや販促ツールの制作</strong>
+        商品の魅力を伝えるPOP・パンフレット・DM・ノベルティの制作費用が対象になることがあります。購買動線の改善や来店促進を目的とした販促物が該当するケースがあります。
+      </li>
+      <li>
+        <strong>SNS広告・リスティング広告</strong>
+        新規顧客の獲得を目的としたWeb広告費用が補助対象になることがあります。ただし、広告費は補助上限額のうち一定割合に限られることがあるため、公募要領の確認が必要です。
+      </li>
+      <li>
+        <strong>店舗改装・陳列棚の更新</strong>
+        顧客が購買しやすい売り場環境づくりのための内装工事・什器更新が対象になることがあります。「販路開拓」として位置づけられるかどうかの説明が審査のポイントになります。
+      </li>
+    </ul>
+
+    <h3>サービス業での持続化補助金活用例</h3>
+
+    <div class="case-box">
+      <div class="case-box-title">業種別の活用ケース（一例）</div>
+      <ul>
+        <li>美容院：予約サイトへの掲載費用・チラシ制作・店舗看板リニューアル</li>
+        <li>飲食店：テイクアウト・デリバリー対応のパッケージ・ECメニュー開設</li>
+        <li>学習塾：体験授業の告知チラシ・地域向けWeb広告・ホームページ制作</li>
+        <li>整体院・治療院：新患獲得のためのWeb広告・SNS運用支援費用</li>
+        <li>ペットサロン：顧客向けニュースレター・SNSキャンペーン費用</li>
+      </ul>
+    </div>
+
+    <p>持続化補助金の申請には、地元の商工会または商工会議所に相談して「経営計画書」と「補助事業計画書」を作成することが要件になっています。商工会・商工会議所の担当者が書類作成をサポートしてくれるため、初めて補助金を申請する方でも取り組みやすい制度のひとつです。</p>
+
+    <h2>IT導入補助金――予約・在庫・POSのデジタル化に活用</h2>
+
+    <figure class="article-figure">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-support-2326.png" alt="小売業・サービス業のIT導入補助金">
+      <figcaption>POSレジ・予約管理システム・顧客管理ソフトの導入費用を補助できます</figcaption>
+    </figure>
+
+    <p>IT導入補助金は業種を問わず活用できる補助金で、小売業・サービス業でも幅広いITツールの導入費用が対象になることがあります。補助率は1/2〜3/4程度で、インボイス対応・電子帳簿保存法への対応を後押しする枠も設けられています。</p>
+
+    <h3>小売業・サービス業でIT導入補助金の対象になることがあるツールの例</h3>
+
+    <ul class="type-list">
+      <li>
+        <strong>POSレジ・在庫管理システム</strong>
+        売上・在庫・発注をリアルタイムで管理できるクラウド型POSが対象になることがあります。多店舗展開を検討している小売業者に向いているケースがあります。
+      </li>
+      <li>
+        <strong>予約管理・顧客管理システム</strong>
+        美容院・整体院・飲食店など、予約対応が中心のサービス業では、ネット予約システム・CRM（顧客管理）ソフトが対象になることがあります。電話対応の時間削減・顧客の来店頻度分析に役立つツールが多く登録されています。
+      </li>
+      <li>
+        <strong>会計・請求書管理ソフト</strong>
+        インボイス対応・電子帳簿保存法に対応したクラウド会計ソフトが補助対象になることがあります。補助金専用の枠が設けられていることもあるため、最新の公募要領を確認してください。
+      </li>
+      <li>
+        <strong>ECサイト構築・受発注システム</strong>
+        オンライン販売を始めるためのECプラットフォーム費用が対象になることがあります。IT導入補助金と持続化補助金は対象経費が異なるため、どちらが自社に合っているかを比較することをおすすめします。
+      </li>
+    </ul>
+
+    <p>参考：IT導入補助金公式サイト（<a href="https://it-shien.smrj.go.jp/" target="_blank" rel="noopener">https://it-shien.smrj.go.jp/</a>）では、登録済みITツールの一覧と対応する支援事業者を検索できます。</p>
+
+    <h2>ものづくり補助金――サービス業でも使えるケース</h2>
+
+    <p>ものづくり補助金は「製造業向け」というイメージがありますが、サービス業・小売業でも対象になるケースがあります。「革新的なサービス・試作品の開発」や「生産性の大幅な向上につながる設備投資」が対象の中心です。</p>
+
+    <h3>サービス業・小売業でのものづくり補助金の活用ケース</h3>
+
+    <div class="case-box">
+      <div class="case-box-title">ものづくり補助金が活用できることがあるサービス業の例</div>
+      <ul>
+        <li>美容院：高機能なスチーマー・頭皮診断機器など新サービス提供のための機器導入</li>
+        <li>飲食店：調理の自動化・省力化に向けた専用調理機器の導入</li>
+        <li>学習塾：AI型学習支援システムの開発・オンライン授業配信システムの構築</li>
+        <li>宿泊業：チェックイン自動化・室内環境管理システムの開発・導入</li>
+        <li>小売業：自動発注・物流管理の自動化システムの開発</li>
+      </ul>
+    </div>
+
+    <p>ものづくり補助金での申請では、「自社にとって革新的な取り組みであること」を事業計画書で説明することが重要です。単なる設備の更新や日常的な業務ツールの導入は採択されにくい場合があります。認定支援機関との早期連携をおすすめします。</p>
+
+    <p>参考：中小企業庁「ものづくり補助金総合サイト」（<a href="https://portal.monodukuri-hojo.jp/" target="_blank" rel="noopener">https://portal.monodukuri-hojo.jp/</a>）</p>
+
+    <h2>補助金選びの手順――どの制度を使うかの判断フロー</h2>
+
+    <p>どの補助金を使うべきか迷ったときは、以下の順で考えると整理しやすくなります。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">補助金選びの4ステップ</div>
+      <ul>
+        <li>Step1：「何に使いたいか」を明確にする（設備・広告・ITツール・人件費など）</li>
+        <li>Step2：自社の従業員数・業種が各制度の対象要件を満たすか確認する</li>
+        <li>Step3：補助率・補助上限額・申請期限を比較する</li>
+        <li>Step4：認定支援機関や商工会・商工会議所に相談し、申請書類の準備を始める</li>
+      </ul>
+    </div>
+
+    <p>特に小売業・サービス業の方は、Step1で「販路開拓が目的か」「業務効率化が目的か」を先に決めることで、持続化補助金とIT導入補助金のどちらが向いているかが自然と絞り込めます。両制度を同時並行で進めることもできるケースがありますが、対象経費の重複には制限がありますので、専門家への確認をおすすめします。</p>
+
+    <h2>申請時の注意点――小売業・サービス業に多いつまずきポイント</h2>
+
+    <h3>「補助金採択後に発注する」ルールを守る</h3>
+
+    <p>補助金は原則として採択通知を受け取った後に発注・契約を行う必要があります。「先に発注してしまった」という理由で補助対象外となるケースがあるため、発注のタイミングには特に注意が必要です。</p>
+
+    <h3>「広告費の上限」を確認する</h3>
+
+    <p>持続化補助金では、広告費（Web広告・チラシ印刷費等）が補助対象になることがありますが、補助対象経費全体のうち一定割合を超えられないルールが設けられていることがあります。公募要領の最新版で上限を確認してから申請計画を立てることをおすすめします。</p>
+
+    <h3>「継続的な運用費用」は対象外になることが多い</h3>
+
+    <p>月額のサービス料金・サブスクリプション型のITツール費用（IT導入補助金の一部枠を除く）・継続的な広告費などは、補助対象外になることが多いです。一時的な導入費用と継続費用を区別して計画を立てることが重要です。</p>
+
+    <h2>よくある質問</h2>
+
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>小売業が補助金を使ってECサイトを作れますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>持続化補助金やIT導入補助金を活用してECサイト構築費用を補助対象にできることがあります。ただし、各制度の要件・上限額が異なるため、申請前に公募要領の確認が必要です。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>美容院・飲食店でも補助金は使えますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>サービス業全般が対象になることがあります。持続化補助金は特に小規模なサービス業者に向いており、店舗改装・チラシ制作・予約システム導入などに活用できるケースがあります。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>補助金申請に必要な書類はどこで揃えますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>制度によって異なりますが、確定申告書・事業計画書・見積書が基本です。持続化補助金では商工会・商工会議所が書類作成の支援をしています。ものづくり補助金では認定支援機関のサポートを受けることが要件です。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>小売業・サービス業で採択率を高めるには何をすればよいですか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>事業計画書に「なぜこの投資が必要か」「導入後に何がどう変わるか」を数字で書くことが重要です。売上目標・客数の変化・業務時間の削減見込みなど、定量的な根拠を入れると審査員に伝わりやすくなることがあります。</p></div>
+      </div>
+    </div>
+
+  </article>
+
+  <div class="supervisor-box" id="supervisor">
+    <img src="/hojokin/wp-content/uploads/2026/05/akutsu-portrait.jpg" alt="担当者" class="supervisor-avatar" style="border-radius:50%;object-fit:cover;width:80px;height:80px;flex-shrink:0;">
+    <div class="supervisor-info">
+      <div class="supervisor-label">著者</div>
+      <div class="supervisor-name">担当者</div>
+      <div class="supervisor-title">行政書士・経営革新等支援機関（認定支援機関）｜Well Consultant合同会社 代表</div>
+      <p class="supervisor-bio">Well Consultant合同会社代表。行政書士として補助金申請支援に特化した実務を展開。中小企業庁認定の経営革新等支援機関として、ものづくり補助金・持続化補助金・IT導入補助金など主要補助金の申請書作成から採択後フォローまでを一貫してサポート。補助金採択件数157件・採択総額26億円超の実績をもとに、補助金コンサルとして独立・継続するためのノウハウを発信しています。</p>
+    </div>
+  </div>
+
+  <section class="related-section">
+    <h2>関連記事</h2>
+    <div class="related-grid">
+      <a href="https://fp-1.info/hojokin/2026/05/17/hojo-hanro-tennjikai/" class="related-card">
+        <div class="related-card-img">
+          <span>補助金で販路開拓<br>展示会出展</span>
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">販路開拓・展示会</div>
+          <div class="related-card-title">補助金を使って販路開拓・展示会出展をする方法</div>
+        </div>
+      </a>
+      <a href="https://fp-1.info/hojokin/2026/05/17/hojo-joseikin-chigai/" class="related-card">
+        <div class="related-card-img" style="background:#5a4a1a;">
+          <span>補助金と助成金<br>何が違う？</span>
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">補助金基礎知識</div>
+          <div class="related-card-title">補助金と助成金の違いとは？返済・審査・対象を徹底比較</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="blog-core-offer">
+    <h2>このページを訪れた方はこれらのコンテンツを入手しています。</h2>
+    <div class="blog-core-offer-cards">
+      <a href="https://www.funnel-build.com/joseikinguide-opt" class="blog-core-card" target="_blank" rel="noopener">
+        <div class="blog-core-thumb">
+          <img src="/hojokin/wp-content/uploads/2026/05/guidebook-v5-scaled.jpg" alt="助成金獲得ガイドブック">
+          <div class="blog-core-thumb-label">無料ガイドブック｜助成金獲得</div>
+        </div>
+        <div class="blog-core-card-body">
+          <h3>助成金獲得ガイドブック</h3>
+          <p>助成金の制度がわからない方へ。ガイドブック・助成金リスト・準備書類リスト・GPT質問ボットを無料進呈。157件超の採択実績をもとに制作。</p>
+          <span class="blog-core-card-cta">今すぐ無料で受け取る</span>
+        </div>
+      </a>
+      <a href="https://www.funnel-build.com/opt-webinar-7model" class="blog-core-card" target="_blank" rel="noopener">
+        <div class="blog-core-thumb">
+          <img src="/hojokin/wp-content/uploads/2026/05/webinar-v5-scaled.jpg" alt="補助金活用型7つのビジネスモデル構築ウェビナー">
+          <div class="blog-core-thumb-label">無料ウェビナー｜7つのビジネスモデル</div>
+        </div>
+        <div class="blog-core-card-body">
+          <h3>補助金活用型7つのビジネスモデル構築ウェビナー</h3>
+          <p>補助金を活用した7つのビジネスモデルを公開するライブ無料トレーニング。補助金で事業を安定・拡大する具体的な仕組みを学べます。</p>
+          <span class="blog-core-card-cta">今すぐ視聴登録する</span>
+        </div>
+      </a>
+      <a href="https://www.funnel-build.com/ht3" class="blog-core-card" target="_blank" rel="noopener">
+        <div class="blog-core-thumb">
+          <img src="/hojokin/wp-content/uploads/2026/05/manual-v5-scaled.jpg" alt="補助金獲得実務マニュアル">
+          <div class="blog-core-thumb-label">無料マニュアル｜補助金獲得実務</div>
+        </div>
+        <div class="blog-core-card-body">
+          <h3>補助金獲得実務マニュアル</h3>
+          <p>47ページのマニュアル＋500分超の動画講座＋事業計画テンプレート3種＋AI活用事例42個。1,000人超が読んだ実務書を無料でお届け。</p>
+          <span class="blog-core-card-cta">今すぐ実務マニュアルを受け取る</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</div>
+<aside class="blog-sidebar">
+  <div class="sidebar-section-title">補助金記事を読む目的で選ぶ</div>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-1" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-apply-2342.png" alt="補助金を申請したい人へ">
+      <span class="sidebar-genre-badge orange">補助金を申請したい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>補助金の選び方・申請手順・採択のコツを実務レベルで解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-2" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-support-2326.png" alt="補助金をサポートしたい人へ">
+      <span class="sidebar-genre-badge navy">補助金をサポートしたい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>支援ビジネスの立上げ・集客・報酬設計を実例ベースで解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-3" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-sell-2329.png" alt="補助金を使って売りたい人へ">
+      <span class="sidebar-genre-badge green">補助金を使って売りたい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>補助金経由で顧客を獲得する販路拡大の手法を解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener" class="sidebar-feed"><img src="/hojokin/wp-content/uploads/2026/05/hojo-feed-thumb.png" alt="補助金フィード"><span class="sidebar-feed-label">補助金フィードを見る →</span></a>
+  <a href="https://fp-1.info/hojokin/#cta" class="sidebar-consult">無料相談はこちら →</a>
+</aside>
+</div>
+
+<footer class="custom-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="https://fp-1.info/hojokin/">トップ</a>
+      <a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <a href="https://fp-1.info/hojokin/#cta">お問い合わせ</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="https://fp-1.info/hojokin/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://fp-1.info/hojokin/tokusho/" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
+    </div>
+    <p class="footer-copy">© 2026 Well Consultant. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>/* MOBILE_MENU_v1 */
+(function(){var b=document.querySelector('.nav-hamburger');var m=document.querySelector('.mobile-menu');if(b&&m){b.addEventListener('click',function(e){e.preventDefault();m.classList.toggle('open');});Array.prototype.forEach.call(m.querySelectorAll('a'),function(a){a.addEventListener('click',function(){m.classList.remove('open');});});}})();
+</script>
+<script>(function(){
+function k(){
+  /* HTMLとBODYの上余白を強制0（WP admin bar対策） */
+  document.documentElement.style.setProperty('margin-top','0','important');
+  document.documentElement.style.setProperty('padding-top','0','important');
+  document.body.style.setProperty('margin-top','0','important');
+  document.body.style.setProperty('padding-top','0','important');
+  /* wp-site-blocks > 子要素の上マージンを強制0 */
+  var wsb=document.querySelector('.wp-site-blocks');
+  if(wsb){wsb.style.setProperty('margin-top','0','important');wsb.style.setProperty('padding-top','0','important');Array.prototype.forEach.call(wsb.children,function(c){c.style.setProperty('margin-top','0','important');c.style.setProperty('margin-block-start','0','important');});}
+  /* H2「投稿をさらに読み込む」を非表示（WPテンプレが出す見出し） */
+  document.querySelectorAll('h2').forEach(function(h){if(h.textContent.indexOf('投稿をさらに読み込')!==-1){h.style.setProperty('display','none','important');var nx=h.nextElementSibling;if(nx&&nx.classList&&nx.classList.contains('wp-block-query'))nx.style.setProperty('display','none','important');}});
+  ['header.wp-block-template-part','.wp-site-blocks > header','.wp-block-template-part[data-area="header"]','.wp-block-post-author-name','.wp-block-group.has-accent-4-color','.wp-block-post-title','h1.wp-block-post-title','nav[aria-label="投稿ナビゲーション"]','.wp-block-post-navigation-link','.wp-block-query','#supervisor'].forEach(function(s){document.querySelectorAll(s).forEach(function(e){if(!e.classList.contains('page-layout')&&!e.classList.contains('main-wrap')&&!e.classList.contains('blog-sidebar'))e.style.setProperty('display','none','important');});});
+  var pl=document.querySelector('.page-layout');
+  var mw=document.querySelector('.main-wrap');
+  var sp=document.querySelector('.blog-nav-spacer');
+  var bs=document.querySelector('.blog-sidebar');
+  if(pl){pl.style.setProperty('display','grid','important');pl.style.setProperty('grid-template-columns','minmax(0,1fr) 260px','important');pl.style.setProperty('gap','32px','important');pl.style.setProperty('align-items','start','important');pl.style.setProperty('width','100%','important');pl.style.setProperty('max-width','1160px','important');pl.style.setProperty('margin','0 auto','important');pl.style.setProperty('padding','0 20px 60px','important');pl.style.setProperty('box-sizing','border-box','important');pl.style.setProperty('overflow','visible','important');}
+  if(mw){mw.style.setProperty('min-width','0','important');mw.style.setProperty('visibility','visible','important');mw.style.setProperty('opacity','1','important');mw.style.setProperty('overflow','visible','important');}
+  if(sp){sp.style.setProperty('display','none','important');}
+  if(bs){bs.style.setProperty('width','260px','important');bs.style.setProperty('position','sticky','important');bs.style.setProperty('top','78px','important');bs.style.setProperty('align-self','start','important');bs.style.setProperty('max-height','calc(100vh - 90px)','important');bs.style.setProperty('overflow-y','auto','important');}
+  /* 親祖先のoverflowをvisible化（stickyの効果を阻害させない） */
+  var anc = bs ? bs.parentElement : null;
+  while(anc && anc !== document.body){
+    anc.style.setProperty('overflow','visible','important');
+    anc = anc.parentElement;
+  }
+}
+if(document.readyState!=='loading')k();else document.addEventListener('DOMContentLoaded',k);
+window.addEventListener('load',k);
+})();</script>
+
+
+</body>
+</html>

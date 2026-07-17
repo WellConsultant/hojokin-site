@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>補助金受給後の報告義務と実績報告の進め方   Well Consultant</title>
+</head>
+<body>
+
+<style>
+
+/* WP変数リセット */
+:root,html,body{--wp--style--global--content-size:100%!important;--wp--style--global--wide-size:100%!important;--wp--style--root--padding-top:0!important;--wp--style--root--padding-right:0!important;--wp--style--root--padding-bottom:0!important;--wp--style--root--padding-left:0!important;}
+/* ボディリセット */
+body,body.page,body.home,body.single,body.single-post{margin:0!important;padding:0!important;padding-top:0!important;}
+/* WPブロック全幅化 */
+.wp-site-blocks,.wp-site-blocks>main,main.wp-block-group,.wp-block-group.has-global-padding,.wp-block-post-content,.entry-content,.wp-block-group.alignfull,.wp-block-group-is-layout-constrained,.wp-block-post-content-is-layout-constrained,.wp-block-html,article.post,article.page,.post,.hentry,.page{max-width:100%!important;width:100%!important;margin:0!important;padding:0!important;}
+.has-global-padding,.has-global-padding>.alignfull{padding-left:0!important;padding-right:0!important;}
+/* WPテーマヘッダー・ナビ・サイドバー非表示 */
+.wp-block-post-title,.entry-header,.entry-title,header.entry-header,.wp-block-template-part header,header.wp-block-template-part,.wp-site-blocks>header,.wp-block-site-title,.wp-block-navigation,.wp-block-template-part[data-area="header"],aside.sidebar,.widget-area,.sidebar,#secondary{display:none!important;}
+/* WP投稿メタ情報非表示（執筆者・カテゴリ等） */
+.entry-meta,.post-meta,.byline,.posted-on,.cat-links,.author,.tags-links,.comments-link,.wp-block-post-author,.wp-block-post-author__bio,.wp-block-post-author-name,.wp-block-post-date,.wp-block-post-terms,.wp-block-post-excerpt,p.has-text-align-right,.screen-reader-text{display:none!important;}
+/* WPテンプレート上部の余分なpadding/margin除去（inline style対策） */
+main.wp-block-group[style]{margin-top:0!important;padding-top:0!important;}
+.wp-block-group.alignfull[style]{padding-top:0!important;padding-bottom:0!important;}
+.wp-block-group.has-accent-4-color{display:none!important;}
+/* WP adminbar非表示 */
+#wpadminbar,#wpadminbar *{display:none!important;}
+html{margin-top:0!important;}
+/* WP footer非表示 */
+.wp-site-blocks>footer,.wp-block-template-part[data-area="footer"],footer.wp-block-template-part{display:none!important;}
+footer:not(.custom-footer){display:none!important;}
+/* WPテーマ投稿ナビゲーション非表示 */
+.post-navigation,.posts-navigation,.navigation.post-navigation,.navigation.posts-navigation,.nav-previous,.nav-next,.wp-block-query-pagination,.wp-block-query-pagination-next,.wp-block-query-pagination-previous,.more-link,a.more-link{display:none!important;}
+/* WP投稿ナビゲーションリンクブロック（実際に使われているクラス） */
+.wp-block-post-navigation-link,.post-navigation-link-previous,.post-navigation-link-next,nav[aria-label="投稿ナビゲーション"]{display:none!important;}
+/* 投稿をさらに読み込む（WPクエリブロック） */
+.wp-block-query{display:none!important;}
+/* WPコメント非表示 */
+#comments,.comments-area,.comment-respond,.wp-block-comments,.wp-comment-respond,.comment-list,.comment-form,.comments-pagination{display:none!important;}
+/* is-layout-constrained: wp-block-htmlブロックの幅制限を解除 */
+.is-layout-constrained>.wp-block-html,.is-layout-constrained>.wp-block-group:not(.alignwide):not(.alignfull){max-width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important;}
+/* 重複監修者ボックス（id="supervisor"のテンプレート部分）を非表示 */
+#supervisor{display:none!important;}
+/* === メニューバー上の隙間を消す（WP admin bar + wp-site-blocksの上余白を完全除去） === */
+html,html[lang]{margin-top:0!important;padding-top:0!important;}
+body,body.admin-bar,body.logged-in,body.wp-singular,body.single,body.single-post{margin:0!important;margin-top:0!important;padding:0!important;padding-top:0!important;}
+.wp-site-blocks{padding-top:0!important;margin-top:0!important;}
+.wp-site-blocks>main,.wp-site-blocks>main.wp-block-group,.wp-site-blocks>.wp-block-group,.wp-site-blocks>article,.wp-site-blocks>.wp-block-post-content{margin-top:0!important;margin-block-start:0!important;padding-top:0!important;}
+:where(.wp-site-blocks)>*,:where(.wp-site-blocks)>:first-child{margin-block-start:0!important;margin-top:0!important;}
+:where(.is-layout-flow)>*,:where(.is-layout-flow)>:first-child,:where(.is-layout-constrained)>*,:where(.is-layout-constrained)>:first-child{margin-block-start:0!important;margin-top:0!important;}
+@media screen and (min-width:783px){html{margin-top:0!important;}}
+/* === アイキャッチ画像のサイズ制限（デカすぎ対策） === */
+.article-hero{max-height:360px!important;overflow:hidden!important;border-radius:10px!important;margin:18px 0 28px!important;}
+.article-hero img{width:100%!important;height:100%!important;max-height:360px!important;object-fit:cover!important;display:block!important;}
+@media(max-width:768px){.article-hero{max-height:220px!important;}.article-hero img{max-height:220px!important;}}
+/* === サイドバージャンルカード画像サイズ強制（WPテーマが上書きするのを防ぐ） === */
+.sidebar-genre-img{height:90px!important;overflow:hidden!important;position:relative!important;}
+.sidebar-genre-img img{width:100%!important;height:100%!important;max-height:90px!important;object-fit:cover!important;display:block!important;}
+/* === 補助金フィードのサムネサイズ制限 === */
+.sidebar-feed{padding:12px!important;}
+.sidebar-feed img{width:100%!important;max-width:260px!important;height:auto!important;max-height:140px!important;display:block!important;margin:0 auto 8px!important;object-fit:cover!important;border-radius:4px!important;}
+/* === サイドバー上の見出し（補助金フィード等）を表示強制 === */
+.sidebar-section-title{display:block!important;visibility:visible!important;opacity:1!important;font-size:16px!important;font-weight:700!important;color:#1a3a5c!important;letter-spacing:0.02em!important;margin-bottom:14px!important;text-transform:none!important;line-height:1.4!important;}
+
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif; font-size: 16px; line-height: 1.85; color: #222; background: #f5f7fa; }
+    .breadcrumb { background: #e8edf3; padding: 10px 0; font-size: 13px; }
+    .breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    .breadcrumb li + li::before { content: '>'; margin-right: 4px; color: #888; }
+    .breadcrumb a { color: #1a3a5c; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article-figure { margin: 28px 0; }
+    .article-figure img { width: 100%; height: 240px; object-fit: cover; border-radius: 8px; display: block; }
+    .article-figure figcaption { font-size: 13px; color: #666; text-align: center; margin-top: 8px; }
+    .article-header { margin-bottom: 32px; }
+    .article-cat { display: inline-block; background: #d35400; color: #fff; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 3px; margin-bottom: 12px; }
+    .article-title { font-size: 28px; font-weight: 900; color: #1a3a5c; line-height: 1.4; margin-bottom: 12px; }
+    .article-meta { font-size: 13px; color: #666; display: flex; gap: 16px; flex-wrap: wrap; }
+    .article-meta time { color: #1a3a5c; }
+    .article-body { color: #333; }
+    .article-body p { margin-bottom: 1.4em; text-align: left; }
+    .article-body h2 { font-size: 22px; font-weight: 900; color: #1a3a5c; border-left: 5px solid #d35400; padding: 6px 0 6px 14px; margin: 48px 0 20px; line-height: 1.4; }
+    .article-body h3 { font-size: 18px; font-weight: 700; color: #1a3a5c; border-bottom: 2px solid #c8d8e8; padding-bottom: 6px; margin: 32px 0 16px; }
+    .lead-box { background: #eaf0f8; border-left: 4px solid #1a3a5c; padding: 20px 24px; border-radius: 4px; margin-bottom: 32px; }
+    .lead-box p { margin-bottom: 0; color: #1a3a5c; font-weight: 500; }
+    .point-box { background: #fff8f3; border: 2px solid #d35400; border-radius: 6px; padding: 20px 24px; margin: 24px 0; }
+    .point-box-title { font-size: 14px; font-weight: 700; color: #d35400; margin-bottom: 10px; }
+    .point-box ul { padding-left: 1.4em; }
+    .point-box li { margin-bottom: 6px; }
+    .type-list { list-style: none; padding: 0; margin: 16px 0; }
+    .type-list li { padding: 14px 16px; border-left: 4px solid #1a3a5c; background: #f5f8fc; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
+    .type-list li strong { color: #1a3a5c; display: block; margin-bottom: 4px; }
+    .flow-list { list-style: none; padding: 0; margin: 20px 0; counter-reset: flow-counter; }
+    .flow-list li { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #e0e8f0; counter-increment: flow-counter; }
+    .flow-list li:last-child { border-bottom: none; }
+    .flow-num { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #1a3a5c; color: #fff; font-size: 14px; font-weight: 900; border-radius: 50%; }
+    .flow-content { flex: 1; }
+    .flow-title { font-weight: 700; color: #1a3a5c; margin-bottom: 4px; font-size: 16px; }
+    .flow-desc { font-size: 14px; color: #555; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+    .compare-table thead tr { background: #1a3a5c; color: #fff; }
+    .compare-table th { padding: 12px 16px; text-align: center; font-weight: 700; }
+    .compare-table td { padding: 12px 16px; border-bottom: 1px solid #d0dcea; text-align: left; vertical-align: top; }
+    .compare-table tr:nth-child(even) td { background: #f0f5fa; }
+    .compare-table td:first-child { font-weight: 700; color: #1a3a5c; width: 30%; }
+    .faq-section { margin: 40px 0; }
+    .faq-item { border: 1px solid #c8d8e8; border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+    .faq-q { background: #1a3a5c; color: #fff; padding: 14px 18px; font-weight: 700; font-size: 15px; display: flex; gap: 10px; align-items: flex-start; }
+    .faq-q .faq-icon { flex-shrink: 0; color: #d35400; font-size: 18px; font-weight: 900; }
+    .faq-a { padding: 16px 18px; background: #fff; font-size: 15px; display: flex; gap: 10px; align-items: flex-start; }
+    .faq-a .faq-icon { flex-shrink: 0; color: #1a3a5c; font-size: 18px; font-weight: 900; }
+    .faq-a p { margin-bottom: 0; }
+    .supervisor-box { display: flex; gap: 20px; align-items: flex-start; border: 1px solid #c8d8e8; border-radius: 8px; padding: 24px; margin: 40px 0; background: #f5f8fc; }
+    .supervisor-info { flex: 1; }
+    .supervisor-label { font-size: 11px; color: #888; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .supervisor-name { font-size: 18px; font-weight: 900; color: #1a3a5c; margin-bottom: 4px; }
+    .supervisor-title { font-size: 13px; color: #555; margin-bottom: 10px; }
+    .supervisor-bio { font-size: 14px; color: #444; line-height: 1.7; margin-bottom: 0; }
+    .related-section { margin: 48px 0 32px; }
+    .related-section h2 { font-size: 20px; font-weight: 900; color: #1a3a5c; border-left: 5px solid #d35400; padding: 4px 0 4px 14px; margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .related-card { border: 1px solid #c8d8e8; border-radius: 6px; overflow: hidden; text-decoration: none; color: inherit; background: #fff; display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 16px rgba(26,58,92,0.12); }
+    .related-card-img { width: 100%; height: 120px; background: #1a3a5c; display: flex; align-items: center; justify-content: center; }
+    .related-card-img span { color: #fff; font-size: 13px; font-weight: 700; text-align: center; padding: 8px; line-height: 1.5; }
+    .related-card-body { padding: 14px 16px; }
+    .related-card-cat { font-size: 11px; color: #d35400; font-weight: 700; margin-bottom: 6px; }
+    .related-card-title { font-size: 15px; font-weight: 700; color: #1a3a5c; line-height: 1.4; }
+    @media(max-width:880px){ .article-title{font-size:22px;} .related-grid{grid-template-columns:1fr;} .supervisor-box{flex-direction:column;} .compare-table{font-size:13px;} }
+  #wpadminbar{display:none!important;}html{margin-top:0!important;}
+@media (max-width: 880px) {
+  .blog-nav .nav-links a:not(.nav-cta) { display: none !important; }
+}
+
+
+  footer{background:#1f2937;color:#fff;padding:44px 24px 24px;}
+  .footer-inner{max-width:880px;margin:0 auto;text-align:center;}
+  .footer-nav{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px;justify-content:center;}
+  .footer-nav a{font-size:13px;color:#fff;text-decoration:none;}
+  .footer-nav a:hover{color:#fff;}
+  .footer-legal{text-align:center;display:flex;gap:20px;margin-bottom:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.12);padding-top:16px;justify-content:center;}
+  .footer-legal a{font-size:12px;color:#ccc;text-decoration:none;}
+  .footer-legal a:hover{color:#fff;}
+  .footer-copy{font-size:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;color:#aaa;}
+  
+
+  .blog-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#1a1a1a;}
+  .blog-nav .nav-inner{max-width:1160px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .blog-nav .nav-logo{color:#fff;font-weight:bold;font-size:14px;text-decoration:none;}
+  .blog-nav .nav-links{display:flex;align-items:center;gap:24px;}
+  .blog-nav .nav-links a{color:#fff;font-size:13px;text-decoration:none;transition:color 0.2s;}
+  .blog-nav .nav-links a:hover{color:#fff;}
+  .blog-nav .nav-cta{background:#d35400;color:#fff !important;padding:8px 20px;border-radius:4px;font-weight:bold;font-size:13px;}
+  .blog-nav .nav-cta:hover{background:#b84600 !important;}
+  .blog-nav-spacer{height: 62px;}
+  
+
+  .blog-core-offer{background:#f5f7fa;padding:28px 20px;margin:24px auto 0;max-width:1160px;border-radius:8px;}
+  .blog-core-offer h2{text-align:center;font-size:22px;font-weight:900;color:#1a3a5c;margin-bottom:32px;border:none;padding:0;}
+  .blog-core-offer-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:100%;margin:0;align-items:stretch;}
+  .blog-core-card{background:#fff;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;flex-direction:column;transition:box-shadow 0.2s;}
+  .blog-core-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.14);}
+  .blog-core-thumb{position:relative;}
+  .blog-core-thumb img{width:100%;height:180px;object-fit:cover;display:block;}
+  .blog-core-thumb-label{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.6);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;}
+  .blog-core-card-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+  .blog-core-card-body h3{font-size:15px;font-weight:900;color:#1a3a5c;margin-bottom:10px;border:none;padding:0;}
+  .blog-core-card-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:16px;}
+  .blog-core-card-cta{display:block;margin-top:auto;background:#d35400;color:#fff;text-align:center;padding:10px 8px;border-radius:4px;font-size:13px;font-weight:700;line-height:1.4;}
+  @media(max-width:680px){.blog-core-offer-cards{grid-template-columns:1fr;}}
+  
+
+  .page-layout{display:flex!important;flex-direction:row!important;gap:32px;max-width:1160px;margin:0 auto;padding:32px 20px 60px;align-items:flex-start!important;}
+  .main-wrap{flex:1!important;min-width:0!important;padding:0;}
+  .blog-sidebar{width:260px!important;flex-shrink:0!important;position:sticky;top:78px;}
+  .sidebar-section-title{font-size:12px;font-weight:700;color:#888;letter-spacing:0.08em;margin-bottom:12px;text-transform:uppercase;}
+  .sidebar-genre-card{display:block;text-decoration:none;border-radius:6px;overflow:hidden;margin-bottom:10px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:box-shadow 0.2s;}
+  .sidebar-genre-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+  .sidebar-genre-img{position:relative;height:90px;overflow:hidden;}
+  .sidebar-genre-img img{width:100%;height:100%;object-fit:cover;}
+  .sidebar-genre-badge{position:absolute;bottom:0;left:0;right:0;padding:4px 8px;font-size:11px;font-weight:700;color:#fff;}
+  .sidebar-genre-badge.orange{background:rgba(211,84,0,0.9);}
+  .sidebar-genre-badge.navy{background:rgba(26,58,92,0.9);}
+  .sidebar-genre-badge.green{background:rgba(46,125,50,0.9);}
+  .sidebar-genre-body{padding:10px 12px;}
+  .sidebar-genre-body p{font-size:12px;color:#555;line-height:1.5;margin-bottom:6px;}
+  .sidebar-genre-link{font-size:12px;font-weight:700;color:#1a3a5c;text-align:right;display:block;}
+  .sidebar-feed{display:block;text-decoration:none;background:#f0f4f8;border:1px solid #b8ccdf;border-radius:6px;overflow:hidden;margin-bottom:10px;font-size:13px;font-weight:700;color:#1a3a5c;text-align:center;transition:background 0.2s;}.sidebar-feed img{width:100%;height:auto;display:block;border-radius:0;}.sidebar-feed-label{padding:8px 16px 10px;display:block;}
+  .sidebar-feed:hover{background:#dce6f0;}
+  .sidebar-consult{display:block;text-decoration:none;background:#d35400;color:#fff;border-radius:6px;padding:14px 16px;font-size:14px;font-weight:700;text-align:center;transition:background 0.2s;}
+  .sidebar-consult:hover{background:#b84600;}
+  @media(max-width:900px){.page-layout{flex-direction:column!important;}.blog-sidebar{width:100%;position:static;}}
+  
+
+/* MOBILE_MENU_v1 */
+.nav-hamburger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;padding:4px 10px;line-height:1;margin-left:8px;}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#1a1a1a;flex-direction:column;padding:8px 24px 20px;z-index:99;border-top:1px solid #333;box-shadow:0 6px 16px rgba(0,0,0,0.4);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid #333;font-size:14px;}
+.mobile-menu a:last-child{border-bottom:0;}
+.mobile-menu .nav-cta{background:#d35400;text-align:center;border-radius:4px;font-weight:bold;margin-top:10px;border:0!important;padding:14px 0;}
+@media(max-width:880px){.nav-hamburger{display:inline-block!important;}}
+/* MOBILE_SIDEBAR_HIDE_v1 */
+@media(max-width:880px){
+  .blog-sidebar{display:none!important;}
+  .page-layout{display:block!important;flex-direction:column!important;}
+  .main-wrap{width:100%!important;max-width:100%!important;flex:none!important;}
+}
+
+
+
+/* === layout force override (Grid方式 / sticky対応) === */
+.page-layout{display:grid!important;grid-template-columns:minmax(0,1fr) 260px!important;gap:32px!important;align-items:start!important;width:100%!important;max-width:1160px!important;margin:0 auto!important;padding:0 20px 60px!important;box-sizing:border-box!important;overflow:visible!important;}
+.main-wrap{min-width:0!important;visibility:visible!important;opacity:1!important;overflow:visible!important;}
+.blog-sidebar{width:260px!important;position:sticky!important;top:78px!important;align-self:start!important;max-height:calc(100vh - 90px)!important;overflow-y:auto!important;}
+.blog-nav-spacer{display:none!important;}
+/* CORE OFFER とフッターも本文と同じ幅で中央揃え */
+.blog-core-offer{max-width:1160px!important;margin:40px auto 20px!important;padding:40px 20px!important;box-sizing:border-box!important;}
+.blog-core-offer-cards{max-width:1120px!important;margin:0 auto!important;}
+.custom-footer .footer-inner{max-width:1160px!important;margin:0 auto!important;}
+@media(max-width:900px){.page-layout{display:block!important;padding:0 16px 40px!important;}.main-wrap{display:block!important;width:100%!important;padding-right:0!important;}.blog-sidebar{display:block!important;width:100%!important;position:static!important;max-height:none!important;overflow:visible!important;}.blog-core-offer{padding:24px 16px!important;}}
+
+</style>
+<nav class="blog-nav">
+  <div class="nav-inner">
+    <a href="https://fp-1.info/hojokin/" class="nav-logo">補助金活用型経営を進めるガイド</a>
+    <div class="nav-links">
+      <a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <button class="nav-hamburger" aria-label="メニュー">☰</button><a href="https://fp-1.info/hojokin/#cta" class="nav-cta">無料相談</a>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+<a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <a href="https://fp-1.info/hojokin/#cta" class="nav-cta">無料相談</a>
+</div>
+<div class="blog-nav-spacer"></div>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="https://fp-1.info/hojokin/">ホーム</a></li>
+    <li><a href="./">ブログ</a></li>
+    <li>補助金受給後の報告義務と実績報告の進め方</li>
+  </ol>
+</nav>
+
+<div class="page-layout" style="display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start;width:100%;max-width:1160px;margin:0 auto;padding:0 20px 60px;box-sizing:border-box;overflow:visible;">
+<div class="main-wrap" style="min-width:0;visibility:visible;opacity:1;overflow:visible;">
+
+  <header class="article-header">
+    <span class="article-cat">経営・資金調達・節税</span>
+    <h1 class="article-title">補助金受給後の報告義務と実績報告の進め方</h1>
+    <figure class="article-hero" style="margin:18px 0 28px;">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-support-2318.png" alt="補助金受給後の実績報告の進め方" style="width:100%;max-width:880px;height:auto;border-radius:8px;display:block;">
+    </figure>
+    <div class="article-meta">
+      <span>公開日：<time datetime="2026-05-17">2026年5月17日</time></span>
+      <span>更新日：<time datetime="2026-05-17">2026年5月17日</time></span>
+      <span>Well Consultant 補助金支援チーム</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <div class="lead-box">
+      <p>「補助金は採択されたら終わり」と思っている方も多いですが、採択はスタートに過ぎません。補助事業の実施・実績報告・確定検査・補助金入金、そして採択後数年間の事業化状況報告まで、補助金受給後には多くの手続きと報告義務が続きます。この記事では、補助金採択後に必要な対応を時系列で整理し、実績報告を確実に進めるためのポイントをお伝えします。</p>
+    </div>
+
+    <p>補助金は採択されてから実際に入金されるまでに多くのステップがあります。この流れを正確に理解していないと、対象外の経費を支払ってしまったり、証拠書類が不足して補助金が減額されたりするリスクがあります。</p>
+
+    <p>中小企業庁の補助金では、「実績報告」は採択者が自ら行う義務があり、報告書の内容と証拠書類の整合が取れていないと補助金の交付額が変更になることがあります。実績報告のルールは各補助金の補助事業の手引き・事務局マニュアルに詳しく記載されているため、採択後すぐに確認することを強くおすすめします。</p>
+
+    <p>補助金の手続き全般の公式情報は、中小企業庁の補助金ポータル（<a href="https://jgrants-portal.go.jp/" target="_blank" rel="noopener">https://jgrants-portal.go.jp/</a>）および各補助金の事務局サイトで確認してください。</p>
+
+    <h2>補助金採択後の全体フロー</h2>
+
+    <figure class="article-figure">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-apply-2334.png" alt="補助金採択後から入金までの全体フロー">
+      <figcaption>採択通知から補助金入金まで複数のステップがあります</figcaption>
+    </figure>
+
+    <p>補助金採択後から補助金入金までの大まかな流れは次の通りです。制度によって手順や書類が異なることがあるため、各制度の事務局マニュアルで確認してください。</p>
+
+    <ul class="flow-list">
+      <li>
+        <span class="flow-num">1</span>
+        <div class="flow-content">
+          <div class="flow-title">採択通知の受領・採択後手続きの確認</div>
+          <div class="flow-desc">採択通知書を受け取ったら、事務局から送付される「補助事業の手引き」や「事務処理マニュアル」を必ず読み込み、今後のスケジュールと必要書類を把握します。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">2</span>
+        <div class="flow-content">
+          <div class="flow-title">交付申請書の提出</div>
+          <div class="flow-desc">採択通知後、補助事業を開始するために「交付申請書」を事務局に提出します。交付決定通知を受けるまでは対象経費の発注・契約・購入を原則として開始できません。このルールを守らないと補助対象外になることがあります。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">3</span>
+        <div class="flow-content">
+          <div class="flow-title">交付決定通知の受領</div>
+          <div class="flow-desc">事務局から「交付決定通知書」が届いてから、はじめて補助対象経費の発注・契約・購入を開始できます。このタイミング以前の発注・支払いは補助対象外になることがあります。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">4</span>
+        <div class="flow-content">
+          <div class="flow-title">補助事業の実施（発注・工事・購入等）</div>
+          <div class="flow-desc">交付決定後、補助事業を計画通りに実施します。発注書・納品書・請求書・領収書・振込明細などを漏れなく保管します。写真や検収書類も必要になることがあります。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">5</span>
+        <div class="flow-content">
+          <div class="flow-title">実績報告書の作成・提出</div>
+          <div class="flow-desc">補助事業の実施期間終了後、定められた期限内に実績報告書と証拠書類を事務局に提出します。提出方法・書式・ファイルサイズ等のルールを事前に確認しておくことが重要です。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">6</span>
+        <div class="flow-content">
+          <div class="flow-title">確定検査・補助金額の確定</div>
+          <div class="flow-desc">事務局が実績報告書・証拠書類を審査し、補助金額が確定します。不備がある場合は追加書類の提出を求められることがあります。場合によっては現地確認が行われることもあります。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">7</span>
+        <div class="flow-content">
+          <div class="flow-title">補助金の入金</div>
+          <div class="flow-desc">確定検査が完了し、補助金額が確定した後、指定の口座に補助金が振り込まれます。実績報告提出から入金まで1〜3か月程度かかることがあります。</div>
+        </div>
+      </li>
+      <li>
+        <span class="flow-num">8</span>
+        <div class="flow-content">
+          <div class="flow-title">事業化状況報告（採択後5年間）</div>
+          <div class="flow-desc">主要な補助金では、補助事業終了後5年間にわたって毎年の事業化状況（売上・利益・雇用等）を報告する義務があることがあります。この報告を怠ると補助金の返還を求められることがあります。</div>
+        </div>
+      </li>
+    </ul>
+
+    <h2>実績報告で必要な証拠書類</h2>
+
+    <figure class="article-figure">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-sell-2321.png" alt="補助金実績報告の証拠書類一覧">
+      <figcaption>証拠書類は補助事業の実施中から漏れなく保管することが重要です</figcaption>
+    </figure>
+
+    <p>実績報告で求められる証拠書類は、補助金の種類・対象経費の種類によって異なります。以下は一般的に求められることが多い書類の例です。</p>
+
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>経費の種類</th>
+            <th>一般的に必要な証拠書類</th>
+            <th>注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>機械・設備の購入</td>
+            <td>見積書・発注書・納品書・請求書・領収書（または振込明細）・通帳コピー・設置写真</td>
+            <td>複数の見積書が必要な場合がある。設置後の写真も求められることがある</td>
+          </tr>
+          <tr>
+            <td>外注費（委託費）</td>
+            <td>契約書・仕様書・業務完了報告書・請求書・領収書（または振込明細）</td>
+            <td>業務の具体的な成果物の提出を求められることがある</td>
+          </tr>
+          <tr>
+            <td>広告・販促費</td>
+            <td>見積書・請求書・領収書・制作物の現物または写真・掲載紙面など</td>
+            <td>実際に使用・掲載されたことが確認できる書類が必要なことがある</td>
+          </tr>
+          <tr>
+            <td>専門家経費</td>
+            <td>契約書・活動報告書・請求書・振込明細</td>
+            <td>専門家の関与が確認できる書類（報告書・議事録等）が必要なことがある</td>
+          </tr>
+          <tr>
+            <td>ITツール導入費</td>
+            <td>契約書・利用規約・請求書・振込明細・導入・稼働の証拠</td>
+            <td>ツールの実際の使用（アカウント・ログ等）の確認が求められることがある</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>証拠書類の保管は、補助事業の実施中から始めることが重要です。実績報告の時点でまとめて書類を探そうとすると、紛失・不備が発生するリスクが高まります。発注・支払いのたびに書類をファイリングする習慣をつけることをおすすめします。</p>
+
+    <h2>実績報告書の書き方のポイント</h2>
+
+    <h3>申請時の事業計画書と対応させて書く</h3>
+
+    <p>実績報告書は、申請時に提出した事業計画書の内容と対応させながら書くことが基本です。「計画でどのような取り組みを予定したか」「実際に何を実施したか」「その結果どのような成果が出たか」の3点を整合させて記述します。</p>
+
+    <p>計画と実績のズレが生じた場合は、変更の理由・経緯・変更後の対応策を正直に記載します。実績報告書で事実と異なる内容を記載することは、補助金の返還要求や法的問題につながることがあるため、不明点は必ず事務局に相談してから記載することをおすすめします。</p>
+
+    <h3>数値目標の達成状況を明確に書く</h3>
+
+    <p>申請書で設定した売上目標・生産量目標・コスト削減目標などについて、実績値を数値で記載します。目標を下回った場合でも、その原因と今後の対応策を誠実に記載することが求められます。</p>
+
+    <h3>支出内訳と証拠書類の整合を確認する</h3>
+
+    <p>実績報告書に記載した支出金額と、証拠書類（請求書・領収書・振込明細等）の金額が一致していることを確認します。金額のズレがあると確定検査で指摘を受け、補助金額が変更になることがあります。提出前に1件ずつ金額を照合することをおすすめします。</p>
+
+    <h2>事業化状況報告について</h2>
+
+    <p>ものづくり補助金など主要な補助金では、補助事業終了後5年間にわたって毎年の事業化状況報告が義務付けられていることがあります。具体的には、以下の内容を毎年報告することが求められることがあります。</p>
+
+    <ul class="type-list">
+      <li>
+        <strong>売上高・経常利益の実績</strong>
+        補助事業に関連する製品・サービスの売上高や、法人全体の経常利益の実績値を報告します。申請時に設定した目標値との比較も求められることがあります。
+      </li>
+      <li>
+        <strong>雇用の状況</strong>
+        従業員数・常勤・非常勤の内訳などの雇用状況を報告します。補助金が雇用維持・創出に貢献したかを確認するために必要とされることがあります。
+      </li>
+      <li>
+        <strong>補助事業の継続状況</strong>
+        補助金で導入した設備・システム・サービスが引き続き活用されているかを報告します。補助事業終了後に設備を廃棄・売却する場合は、事前に事務局に相談することが必要なことがあります。
+      </li>
+      <li>
+        <strong>知的財産の状況</strong>
+        補助事業を通じて取得・出願した特許・実用新案などの知的財産権の状況を報告することが求められることがあります。
+      </li>
+    </ul>
+
+    <p>事業化状況報告を怠ったり、虚偽の内容を報告したりした場合は、補助金の返還を求められることがあります。報告のタイミングは事務局から案内が届くことがありますが、毎年のスケジュール管理に組み込んでおくことをおすすめします。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">実績報告・事業化状況報告を確実に進めるための準備リスト</div>
+      <ul>
+        <li>交付決定通知書を受け取ったら、実績報告の締切日をカレンダーに入力する</li>
+        <li>発注・購入のたびに見積書・発注書・請求書・領収書・振込明細をファイリングする</li>
+        <li>設備・工事の完了時に現場写真を撮影・保存する</li>
+        <li>事務局マニュアルに指定された書式・形式で書類を準備する</li>
+        <li>実績報告書を作成したら、申請時の事業計画書と数値・内容を照合する</li>
+        <li>提出前に支出明細と領収書の金額が一致しているか全件確認する</li>
+        <li>事業化状況報告の期間（5年間等）と毎年の提出時期を記録しておく</li>
+      </ul>
+    </div>
+
+    <h2>実績報告でよくある指摘とその対処</h2>
+
+    <p>実績報告の確定検査で指摘を受けることがある主なポイントを整理します。事前に把握しておくことで、書類の不備を防げることがあります。</p>
+
+    <p>最もよく見られる指摘は、証拠書類の金額不一致です。請求書・領収書・振込明細の金額が一致していない場合、補助金の対象外とされることがあります。振込は補助事業者名義の口座から行い、通帳コピーで振込の事実を証明することが基本です。</p>
+
+    <p>次によく見られる指摘は、発注・購入のタイミングの問題です。交付決定通知の受領前に発注・購入した場合、その費用は補助対象外になることがあります。交付決定日と発注書・請求書の日付を必ず確認してください。</p>
+
+    <p>また、対象外経費の計上も指摘されることがあります。公募要領で対象外とされている経費（消耗品・汎用品・土地取得費等）が実績報告に含まれている場合、その分は補助対象から除外されることがあります。申請前に公募要領で対象外経費を確認しておくことが重要です。</p>
+
+    <h2>よくある質問</h2>
+
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>実績報告はいつまでに提出する必要がありますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>実績報告の締切は補助金の種類・採択回・交付決定の時期によって異なります。補助事業の実施期間終了後、通常は数週間〜1か月以内に実績報告書の提出が求められることが多いです。期限は交付決定通知書や補助金の公募要領・事務局からの案内で確認し、早めに準備することをおすすめします。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>実績報告に必要な証拠書類には何がありますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>実績報告に必要な証拠書類は補助金の種類によって異なりますが、一般的には見積書・発注書・請求書・領収書（または振込明細）・通帳コピー・設備の写真・納品書などが求められることが多いです。書類の様式・枚数・電子データの形式なども指定があることがあるため、事務局のマニュアルを事前に確認することをおすすめします。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>実績報告後、補助金の入金まどのくらいかかりますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>実績報告の提出後、事務局による書類審査・確定検査を経て補助金が入金されます。確定検査から入金まで、制度によって異なりますが1〜3か月程度かかることがあります。補助金が入金されるまでの期間、立て替えている費用の資金繰りを事前に計画しておくことが重要です。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>事業化状況報告とは何ですか？何年間続きますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>事業化状況報告は、補助事業終了後も一定期間（主要な補助金では5年間）、毎年の売上・利益・雇用などの実績を報告する義務です。補助金の効果を検証するために設けられています。報告内容が目標を大幅に下回る場合や、補助金の使途に問題があった場合は、補助金の一部返還を求められることがあります。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-icon">Q</span><span>実績報告書の書き方にコツはありますか？</span></div>
+        <div class="faq-a"><span class="faq-icon">A</span><p>実績報告書は、申請時の事業計画書と対応させながら書くことが基本です。「計画でどのような成果を目指したか」「実際に何を実施したか」「結果としてどのような成果が出たか」の流れで記述します。計画からズレが生じた場合は、変更の経緯・理由・対応策を正直に記載することが重要です。不明な点は事務局に相談しながら進めることをおすすめします。</p></div>
+      </div>
+    </div>
+
+    <div class="supervisor-box" id="supervisor">
+      <img src="/hojokin/wp-content/uploads/2026/05/akutsu-portrait.jpg" alt="担当者" style="border-radius:50%;object-fit:cover;width:80px;height:80px;flex-shrink:0;">
+      <div class="supervisor-info">
+        <div class="supervisor-label">著者</div>
+        <div class="supervisor-name">担当者</div>
+        <div class="supervisor-title">行政書士・経営革新等支援機関（認定支援機関）｜Well Consultant合同会社 代表</div>
+        <p class="supervisor-bio">Well Consultant合同会社代表。行政書士として補助金申請支援に特化した実務を展開。中小企業庁認定の経営革新等支援機関として、ものづくり補助金・持続化補助金・IT導入補助金など主要補助金の申請書作成から採択後フォローまでを一貫してサポート。補助金採択件数157件・採択総額26億円超の実績をもとに、補助金コンサルとして独立・継続するためのノウハウを発信しています。</p>
+      </div>
+    </div>
+
+  </article>
+
+  <section class="related-section">
+    <h2>関連記事</h2>
+    <div class="related-grid">
+      <a href="https://fp-1.info/hojokin/2026/05/17/hojo-nenkancal/" class="related-card">
+        <div class="related-card-img">
+          <span>補助金を継続的に活用する<br>年間カレンダーの作り方</span>
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">経営・資金調達・節税</div>
+          <div class="related-card-title">補助金を継続的に活用するための年間カレンダーの作り方</div>
+        </div>
+      </a>
+      <a href="https://fp-1.info/hojokin/2026/05/17/hojo-scale/" class="related-card">
+        <div class="related-card-img" style="background:#2a5a8c;">
+          <span>事業スケールに<br>補助金を活用する5ステップ</span>
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">経営・資金調達・節税</div>
+          <div class="related-card-title">事業スケールに補助金を活用する5つのステップ</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="blog-core-offer">
+    <h2>このページを訪れた方はこれらのコンテンツを入手しています。</h2>
+    <div class="blog-core-offer-cards">
+      <a href="https://www.funnel-build.com/joseikinguide-opt" class="blog-core-card" target="_blank" rel="noopener">
+        <div class="blog-core-thumb">
+          <img src="/hojokin/wp-content/uploads/2026/05/guidebook-v5-scaled.jpg" alt="助成金獲得ガイドブック">
+          <div class="blog-core-thumb-label">無料ガイドブック｜助成金獲得</div>
+        </div>
+        <div class="blog-core-card-body">
+          <h3>助成金獲得ガイドブック</h3>
+          <p>助成金の制度がわからない方へ。ガイドブック・助成金リスト・準備書類リスト・GPT質問ボットを無料進呈。157件超の採択実績をもとに制作。</p>
+          <span class="blog-core-card-cta">今すぐ無料で受け取る</span>
+        </div>
+      </a>
+      <a href="https://www.funnel-build.com/opt-webinar-7model" class="blog-core-card" target="_blank" rel="noopener">
+        <div class="blog-core-thumb">
+          <img src="/hojokin/wp-content/uploads/2026/05/webinar-v5-scaled.jpg" alt="補助金活用型7つのビジネスモデル構築ウェビナー">
+          <div class="blog-core-thumb-label">無料ウェビナー｜7つのビジネスモデル</div>
+        </div>
+        <div class="blog-core-card-body">
+          <h3>補助金活用型7つのビジネスモデル構築ウェビナー</h3>
+          <p>補助金を活用した7つのビジネスモデルを公開するライブ無料トレーニング。補助金で事業を安定・拡大する具体的な仕組みを学べます。</p>
+          <span class="blog-core-card-cta">今すぐ視聴登録する</span>
+        </div>
+      </a>
+      <a href="https://www.funnel-build.com/ht3" class="blog-core-card" target="_blank" rel="noopener">
+        <div class="blog-core-thumb">
+          <img src="/hojokin/wp-content/uploads/2026/05/manual-v5-scaled.jpg" alt="補助金獲得実務マニュアル">
+          <div class="blog-core-thumb-label">無料マニュアル｜補助金獲得実務</div>
+        </div>
+        <div class="blog-core-card-body">
+          <h3>補助金獲得実務マニュアル</h3>
+          <p>47ページのマニュアル＋500分超の動画講座＋事業計画テンプレート3種＋AI活用事例42個。1,000人超が読んだ実務書を無料でお届け。</p>
+          <span class="blog-core-card-cta">今すぐ実務マニュアルを受け取る</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</div>
+<aside class="blog-sidebar">
+  <div class="sidebar-section-title">補助金記事を読む目的で選ぶ</div>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-1" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-apply-2334.png" alt="補助金を申請したい人へ">
+      <span class="sidebar-genre-badge orange">補助金を申請したい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>補助金の選び方・申請手順・採択のコツを実務レベルで解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-2" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-support-2318.png" alt="補助金をサポートしたい人へ">
+      <span class="sidebar-genre-badge navy">補助金をサポートしたい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>支援ビジネスの立上げ・集客・報酬設計を実例ベースで解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-3" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-sell-2321.png" alt="補助金を使って売りたい人へ">
+      <span class="sidebar-genre-badge green">補助金を使って売りたい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>補助金経由で顧客を獲得する販路拡大の手法を解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener" class="sidebar-feed"><img src="/hojokin/wp-content/uploads/2026/05/hojo-feed-thumb.png" alt="補助金フィード"><span class="sidebar-feed-label">補助金フィードを見る →</span></a>
+  <a href="https://fp-1.info/hojokin/#cta" class="sidebar-consult">無料相談はこちら →</a>
+</aside>
+</div>
+
+<footer class="custom-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="https://fp-1.info/hojokin/">トップ</a>
+      <a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <a href="https://fp-1.info/hojokin/#cta">お問い合わせ</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="https://fp-1.info/hojokin/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://fp-1.info/hojokin/tokusho/" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
+    </div>
+    <p class="footer-copy">© 2026 Well Consultant. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>/* MOBILE_MENU_v1 */
+(function(){var b=document.querySelector('.nav-hamburger');var m=document.querySelector('.mobile-menu');if(b&&m){b.addEventListener('click',function(e){e.preventDefault();m.classList.toggle('open');});Array.prototype.forEach.call(m.querySelectorAll('a'),function(a){a.addEventListener('click',function(){m.classList.remove('open');});});}})();
+</script>
+<script>(function(){
+function k(){
+  /* HTMLとBODYの上余白を強制0（WP admin bar対策） */
+  document.documentElement.style.setProperty('margin-top','0','important');
+  document.documentElement.style.setProperty('padding-top','0','important');
+  document.body.style.setProperty('margin-top','0','important');
+  document.body.style.setProperty('padding-top','0','important');
+  /* wp-site-blocks > 子要素の上マージンを強制0 */
+  var wsb=document.querySelector('.wp-site-blocks');
+  if(wsb){wsb.style.setProperty('margin-top','0','important');wsb.style.setProperty('padding-top','0','important');Array.prototype.forEach.call(wsb.children,function(c){c.style.setProperty('margin-top','0','important');c.style.setProperty('margin-block-start','0','important');});}
+  /* H2「投稿をさらに読み込む」を非表示（WPテンプレが出す見出し） */
+  document.querySelectorAll('h2').forEach(function(h){if(h.textContent.indexOf('投稿をさらに読み込')!==-1){h.style.setProperty('display','none','important');var nx=h.nextElementSibling;if(nx&&nx.classList&&nx.classList.contains('wp-block-query'))nx.style.setProperty('display','none','important');}});
+  ['header.wp-block-template-part','.wp-site-blocks > header','.wp-block-template-part[data-area="header"]','.wp-block-post-author-name','.wp-block-group.has-accent-4-color','.wp-block-post-title','h1.wp-block-post-title','nav[aria-label="投稿ナビゲーション"]','.wp-block-post-navigation-link','.wp-block-query','#supervisor'].forEach(function(s){document.querySelectorAll(s).forEach(function(e){if(!e.classList.contains('page-layout')&&!e.classList.contains('main-wrap')&&!e.classList.contains('blog-sidebar'))e.style.setProperty('display','none','important');});});
+  var pl=document.querySelector('.page-layout');
+  var mw=document.querySelector('.main-wrap');
+  var sp=document.querySelector('.blog-nav-spacer');
+  var bs=document.querySelector('.blog-sidebar');
+  if(pl){pl.style.setProperty('display','grid','important');pl.style.setProperty('grid-template-columns','minmax(0,1fr) 260px','important');pl.style.setProperty('gap','32px','important');pl.style.setProperty('align-items','start','important');pl.style.setProperty('width','100%','important');pl.style.setProperty('max-width','1160px','important');pl.style.setProperty('margin','0 auto','important');pl.style.setProperty('padding','0 20px 60px','important');pl.style.setProperty('box-sizing','border-box','important');pl.style.setProperty('overflow','visible','important');}
+  if(mw){mw.style.setProperty('min-width','0','important');mw.style.setProperty('visibility','visible','important');mw.style.setProperty('opacity','1','important');mw.style.setProperty('overflow','visible','important');}
+  if(sp){sp.style.setProperty('display','none','important');}
+  if(bs){bs.style.setProperty('width','260px','important');bs.style.setProperty('position','sticky','important');bs.style.setProperty('top','78px','important');bs.style.setProperty('align-self','start','important');bs.style.setProperty('max-height','calc(100vh - 90px)','important');bs.style.setProperty('overflow-y','auto','important');}
+  /* 親祖先のoverflowをvisible化（stickyの効果を阻害させない） */
+  var anc = bs ? bs.parentElement : null;
+  while(anc && anc !== document.body){
+    anc.style.setProperty('overflow','visible','important');
+    anc = anc.parentElement;
+  }
+}
+if(document.readyState!=='loading')k();else document.addEventListener('DOMContentLoaded',k);
+window.addEventListener('load',k);
+})();</script>
+
+
+</body>
+</html>

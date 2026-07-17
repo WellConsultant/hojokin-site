@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>プッシュ型コンサルティング事業構築研修</title>
+</head>
+<body>
+
+<style>
+/* WPテーマのcontent-size/widthを全幅に */
+:root, html, body { --wp--style--global--content-size: 100% !important; --wp--style--global--wide-size: 100% !important; --wp--style--root--padding-top: 0 !important; --wp--style--root--padding-right: 0 !important; --wp--style--root--padding-bottom: 0 !important; --wp--style--root--padding-left: 0 !important; }
+body, body.page, body.home { margin:0 !important; padding:0 !important; }
+.wp-site-blocks,.wp-site-blocks > main,main.wp-block-group,.wp-block-group.has-global-padding,.wp-block-post-content,.entry-content,.wp-block-group.alignfull,.wp-block-group-is-layout-constrained,.wp-block-post-content-is-layout-constrained,.wp-block-html { max-width:100% !important; width:100% !important; margin:0 !important; padding:0 !important; }
+.is-layout-constrained > .wp-block-group:not(.alignwide):not(.alignfull), .is-layout-constrained > .wp-block-html { max-width:100% !important; margin-left:0 !important; margin-right:0 !important; padding-left:0 !important; padding-right:0 !important; }
+.has-global-padding, .has-global-padding > .alignfull { padding-left:0 !important; padding-right:0 !important; }
+.wp-block-post-title, .entry-header, .entry-title, header.entry-header, .wp-block-template-part header, header.wp-block-template-part, .wp-site-blocks > header, .wp-block-site-title, .wp-block-navigation, .wp-block-template-part[data-area="header"] { display:none !important; }
+.wp-site-blocks>footer, footer.wp-block-template-part, .wp-block-template-part[data-area="footer"], footer:not(.custom-footer) { display:none !important; }
+#wpadminbar, #wpadminbar * { display:none !important; }
+html { margin-top:0 !important; }
+main.wp-block-group[style]{margin-top:0!important;padding-top:0!important;}
+.post-navigation,.posts-navigation,.nav-previous,.nav-next,.wp-block-query-pagination,.more-link,.wp-block-post-navigation-link,nav[aria-label="投稿ナビゲーション"],.wp-block-query{display:none!important;}
+#comments,.comments-area,.comment-respond,.wp-block-comments{display:none!important;}
+
+
+/* ============================================================
+   Design: Editorial Government
+   白地×濃紺(#1A3A6B)×金(#C8A84B)
+   Noto Serif JP 見出し / Noto Sans JP 本文
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #fff; color: #111; line-height: 1.7;
+}
+h1,h2,h3,h4 {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif; color: #111;
+}
+a { text-decoration: none; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+@media(max-width:768px){ .wrap{ padding: 0 1.25rem; } }
+
+/* ---- Header ---- */
+#site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #1A3A6B; transition: background .3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,.18);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+}
+.logo-main {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1rem; color: #fff; letter-spacing: .02em; display: block; line-height: 1.2;
+}
+.logo-sub { font-size: .68rem; color: #C8D8F0; letter-spacing: .04em; display: block; }
+.site-nav { display: flex; gap: .1rem; }
+.site-nav a {
+  font-size: .78rem; font-weight: 500; color: #E8F0FF;
+  padding: .4rem .65rem; border-radius: 3px; letter-spacing: .02em;
+}
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: .5rem;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 1px; }
+#mobile-menu { display: none; background: #0F2347; border-top: 1px solid rgba(255,255,255,.1); }
+#mobile-menu.open { display: block; }
+#mobile-menu a {
+  display: block; font-size: .9rem; font-weight: 500; color: #E8F0FF;
+  padding: .9rem 2rem; border-bottom: 1px solid rgba(255,255,255,.07);
+}
+@media(max-width:960px){ .site-nav{ display: none; } .hamburger{ display: flex; } }
+
+/* ---- Hero ---- */
+#hero {
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden; background: #fff; padding-top: 64px;
+}
+.hero-bg {
+  position: absolute; top: 0; right: 0; width: 55%; height: 100%;
+  background-image: url('/hojokin/wp-content/uploads/hojokin/training-hero-bg.jpg');
+  background-size: cover; background-position: center left; opacity: .9;
+}
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 65%; height: 100%;
+  background: linear-gradient(to right, #fff 55%, rgba(255,255,255,0) 100%); z-index: 1;
+}
+.hero-content {
+  max-width: 1200px; margin: 0 auto; padding: 5rem 2rem 4rem;
+  width: 100%; position: relative; z-index: 2;
+}
+.hero-text { max-width: 600px; }
+.hero-label { display: inline-flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.badge-navy {
+  background: #1A3A6B; color: #fff; font-weight: 700;
+  font-size: .75rem; padding: .25rem .75rem; border-radius: 2px; letter-spacing: .06em;
+}
+.badge-gold { color: #C8A84B; font-weight: 700; font-size: .75rem; letter-spacing: .04em; }
+.hero-h1 {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem); color: #111;
+  line-height: 1.4; margin-bottom: 1rem; letter-spacing: .02em;
+}
+.hero-h1 .accent { color: #1A3A6B; }
+.hero-h1 .sub {
+  font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 700;
+  color: #333; display: block; margin-top: .4rem;
+}
+.hero-desc { font-size: .95rem; color: #333; line-height: 1.85; margin-bottom: 2.5rem; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-block; background: #1A3A6B; color: #fff;
+  font-weight: 700; font-size: .95rem; padding: .9rem 2rem;
+  border-radius: 4px; letter-spacing: .04em;
+}
+.btn-outline {
+  display: inline-block; background: transparent; color: #1A3A6B;
+  font-weight: 700; font-size: .95rem; padding: .9rem 2rem;
+  border-radius: 4px; border: 2px solid #1A3A6B; letter-spacing: .04em;
+}
+.hero-stats { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+.stat-card {
+  background: #1A3A6B; color: #fff;
+  padding: 1.1rem 1.5rem; border-radius: 6px; min-width: 150px;
+}
+.stat-label { font-size: .68rem; color: #C8D8F0; margin-bottom: .3rem; letter-spacing: .04em; }
+.stat-value {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1.6rem; color: #C8A84B; line-height: 1; margin-bottom: .25rem;
+}
+.stat-note { font-size: .62rem; color: #A8B8D0; }
+
+/* ---- Section common ---- */
+.sec { padding: 5.5rem 0; }
+.sec-alt { background: #F5F7FC; }
+.section-en {
+  font-weight: 700; font-size: .72rem; color: #C8A84B;
+  letter-spacing: .1em; display: block; margin-bottom: .65rem;
+}
+.section-h2 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem); color: #111;
+  padding-left: 1rem; border-left: 4px solid #1A3A6B;
+  line-height: 1.4; margin-bottom: 1rem;
+}
+.section-lead { font-size: .93rem; color: #444; line-height: 1.85; max-width: 680px; }
+.sec-head { margin-bottom: 3rem; }
+
+/* ---- About (研修概要) ---- */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;
+}
+@media(max-width:768px){ .about-grid{ grid-template-columns: 1fr; } }
+.about-card {
+  border: 1px solid #E5E7EB; border-radius: 6px; padding: 1.75rem; background: #FAFBFF;
+}
+.about-card h3 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: .95rem; color: #1A3A6B;
+  margin-bottom: .85rem; padding-bottom: .65rem; border-bottom: 2px solid #1A3A6B;
+}
+.about-card p { font-size: .875rem; color: #333; line-height: 1.8; }
+.spec-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+.spec-table tr { border-bottom: 1px solid #E5E7EB; }
+.spec-table tr:first-child { border-top: 1px solid #E5E7EB; }
+.spec-table th {
+  font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: .82rem;
+  color: #1A3A6B; background: #F0F4FF; padding: .85rem 1.25rem;
+  text-align: left; width: 30%; white-space: nowrap;
+  border-right: 1px solid #E5E7EB;
+}
+.spec-table td { font-size: .875rem; color: #333; padding: .85rem 1.25rem; line-height: 1.7; }
+
+/* ---- Target ---- */
+.target-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem;
+}
+.target-card {
+  border: 1px solid #E5E7EB; border-radius: 6px; padding: 1.75rem; background: #fff;
+}
+.target-card h3 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: .95rem; color: #1A3A6B;
+  margin-bottom: .85rem; padding-bottom: .65rem; border-bottom: 2px solid #1A3A6B;
+}
+.dot-list { list-style: none; padding: 0; }
+.dot-list li {
+  font-size: .875rem; color: #333; line-height: 1.7;
+  padding-left: 1rem; position: relative; margin-bottom: .45rem;
+}
+.dot-list li::before {
+  content: ''; position: absolute; left: 0; top: .62em;
+  width: 5px; height: 5px; border-radius: 50%; background: #1A3A6B;
+}
+
+/* ---- Curriculum ---- */
+.curriculum-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px,1fr)); gap: 1.5rem;
+}
+@media(max-width:768px){ .curriculum-grid{ grid-template-columns: 1fr; } }
+.curr-card {
+  border: 1px solid #E5E7EB; border-radius: 6px; overflow: hidden; background: #fff;
+}
+.curr-card-head {
+  background: #1A3A6B; padding: 1rem 1.5rem; display: flex; align-items: center; gap: .75rem;
+}
+.curr-num {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1.3rem; color: #C8A84B; line-height: 1; flex-shrink: 0;
+}
+.curr-title {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: .9rem; color: #fff; line-height: 1.4;
+}
+.curr-card-body { padding: 1.25rem 1.5rem; }
+.curr-desc { font-size: .82rem; color: #444; line-height: 1.75; margin-bottom: 1rem; }
+.curr-table { width: 100%; border-collapse: collapse; }
+.curr-table tr { border-bottom: 1px solid #F0F0F0; }
+.curr-table tr:last-child { border-bottom: none; }
+.curr-table td {
+  font-size: .78rem; color: #333; padding: .45rem .5rem; vertical-align: top; line-height: 1.6;
+}
+.curr-table td:first-child {
+  white-space: nowrap; color: #1A3A6B; font-weight: 700; width: 4.5rem; padding-right: .75rem;
+}
+.curr-table td:last-child { color: #888; width: 5rem; text-align: right; }
+
+/* ---- Subsidy ---- */
+.subsidy-table-wrap {
+  background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem;
+}
+.subsidy-table { width: 100%; border-collapse: collapse; }
+.subsidy-table thead tr { background: #1A3A6B; }
+.subsidy-table thead th {
+  font-weight: 700; font-size: .85rem; color: #fff;
+  padding: .9rem 1.25rem; text-align: left; border-right: 1px solid rgba(255,255,255,.15);
+}
+.subsidy-table thead th:last-child { border-right: none; text-align: center; }
+.subsidy-table thead th.center { text-align: center; }
+.subsidy-table tbody tr { border-top: 1px solid #E5E7EB; }
+.subsidy-table tbody tr:nth-child(odd) { background: #fff; }
+.subsidy-table tbody tr:nth-child(even) { background: #F8F9FE; }
+.subsidy-table td { font-size: .875rem; color: #333; padding: .9rem 1.25rem; border-right: 1px solid #E5E7EB; }
+.subsidy-table td:last-child { border-right: none; }
+.subsidy-table td.val-sme {
+  font-family: 'Noto Serif JP', serif; font-weight: 900; text-align: center;
+}
+.subsidy-table td.val-large {
+  font-family: 'Noto Serif JP', serif; font-weight: 700; text-align: center; color: #555;
+}
+.val-big { font-size: 1.5rem; color: #C8A84B; }
+.val-mid { font-size: 1.15rem; color: #C8A84B; }
+.val-large-big { font-size: 1.2rem; }
+.val-large-mid { font-size: 1rem; }
+.calc-box {
+  background: #1A3A6B; border-radius: 8px; padding: 2.25rem; color: #fff;
+}
+.calc-box h3 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: 1rem; color: #C8A84B; margin-bottom: 1.5rem;
+}
+.calc-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1.25rem;
+}
+.calc-item { border-left: 3px solid rgba(200,168,75,.5); padding-left: 1rem; }
+.calc-item-label { font-size: .72rem; color: #A8B8D0; margin-bottom: .25rem; }
+.calc-item-val {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1.3rem; color: #C8A84B; margin-bottom: .15rem;
+}
+.calc-item-note { font-size: .68rem; color: #7890B0; }
+.calc-note { font-size: .72rem; color: #7890B0; margin-top: 1.25rem; }
+
+/* ---- Flow ---- */
+.flow-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 1.5rem;
+}
+.flow-card {
+  border: 1px solid #E5E7EB; border-radius: 6px; padding: 1.5rem; background: #fff;
+}
+.step-badge {
+  display: inline-block; background: #1A3A6B; color: #fff;
+  font-weight: 700; font-size: .68rem; padding: .2rem .55rem;
+  border-radius: 2px; margin-bottom: .65rem; letter-spacing: .06em;
+}
+.flow-card h3 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: .95rem; color: #111; margin-bottom: .65rem; line-height: 1.4;
+}
+.flow-card p { font-size: .83rem; color: #444; line-height: 1.75; margin-bottom: .85rem; }
+.timing-badge {
+  display: inline-block; background: #F0F4FF; border: 1px solid #C0CFEE;
+  border-radius: 3px; padding: .2rem .55rem; font-size: .68rem; color: #1A3A6B; font-weight: 700;
+}
+.flow-cta {
+  margin-top: 2.5rem; background: #1A3A6B; border-radius: 6px;
+  padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.flow-cta-text h4 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: 1rem; color: #C8A84B; margin-bottom: .4rem;
+}
+.flow-cta-text p { font-size: .85rem; color: #C8D8F0; line-height: 1.7; }
+.btn-gold {
+  display: inline-block; background: #C8A84B; color: #111;
+  font-weight: 700; font-size: .9rem; padding: .85rem 2rem;
+  border-radius: 4px; letter-spacing: .04em; white-space: nowrap;
+}
+
+/* ---- Docs ---- */
+.docs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.25rem;
+}
+.doc-card {
+  border: 1px solid #E5E7EB; border-radius: 6px; padding: 1.25rem 1.5rem; background: #fff;
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.doc-num {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1.2rem; color: #C8A84B; flex-shrink: 0; line-height: 1;
+  margin-top: .1rem;
+}
+.doc-card h3 {
+  font-family: 'Noto Sans JP', sans-serif; font-weight: 700;
+  font-size: .85rem; color: #1A3A6B; margin-bottom: .35rem;
+}
+.doc-card p { font-size: .78rem; color: #555; line-height: 1.65; }
+
+/* ---- FAQ ---- */
+.faq-list { max-width: 800px; }
+.faq-item { border-bottom: 1px solid #E5E7EB; }
+.faq-btn {
+  width: 100%; display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; padding: 1.4rem 0; background: none; border: none; cursor: pointer; text-align: left;
+}
+.faq-q-wrap { display: flex; gap: .85rem; align-items: flex-start; }
+.faq-q-mark {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1.05rem; color: #1A3A6B; flex-shrink: 0; line-height: 1.5;
+}
+.faq-q-text { font-weight: 500; font-size: .93rem; color: #111; line-height: 1.6; }
+.faq-toggle {
+  font-weight: 700; font-size: 1.2rem; color: #1A3A6B;
+  flex-shrink: 0; line-height: 1.5; transition: transform .2s ease; display: inline-block;
+}
+.faq-toggle.open { transform: rotate(45deg); }
+.faq-answer { display: none; padding-bottom: 1.4rem; padding-left: 1.9rem; }
+.faq-answer.open { display: block; }
+.faq-a-wrap { display: flex; gap: .85rem; align-items: flex-start; }
+.faq-a-mark {
+  font-family: 'Noto Serif JP', serif; font-weight: 900;
+  font-size: 1.05rem; color: #C8A84B; flex-shrink: 0; line-height: 1.5;
+}
+.faq-a-text { font-size: .875rem; color: #444; line-height: 1.8; }
+
+/* ---- Contact ---- */
+#contact { background: #1A3A6B; padding: 5.5rem 0; }
+.contact-inner {
+  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+}
+@media(max-width:768px){ .contact-inner{ grid-template-columns: 1fr; } }
+.contact-en { font-weight: 700; font-size: .72rem; color: #C8A84B; letter-spacing: .1em; display: block; margin-bottom: .65rem; }
+.contact-h2 {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: clamp(1.4rem,2.8vw,1.9rem); color: #fff; margin-bottom: 1rem; line-height: 1.4;
+}
+.contact-lead { font-size: .93rem; color: #A8C0E0; line-height: 1.8; margin-bottom: 2rem; max-width: 560px; }
+.contact-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
+.contact-meta-label { font-size: .68rem; color: #7890B0; margin-bottom: .2rem; }
+.contact-meta-val { font-weight: 700; font-size: .88rem; color: #fff; }
+.contact-card {
+  background: #fff; border-radius: 8px; padding: 2.25rem; min-width: 270px; text-align: center;
+}
+.contact-card-title {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: .95rem; color: #1A3A6B; margin-bottom: .45rem;
+}
+.contact-card-sub { font-size: .78rem; color: #666; margin-bottom: 1.4rem; line-height: 1.6; }
+.btn-contact-primary {
+  display: block; background: #1A3A6B; color: #fff;
+  font-weight: 700; font-size: .88rem; padding: .8rem 1.5rem;
+  border-radius: 4px; margin-bottom: .65rem; letter-spacing: .04em;
+}
+.btn-contact-secondary {
+  display: block; background: #F5F7FC; color: #1A3A6B;
+  font-weight: 700; font-size: .88rem; padding: .8rem 1.5rem;
+  border-radius: 4px; letter-spacing: .04em;
+}
+.contact-hours { font-size: .68rem; color: #999; margin-top: .85rem; }
+
+/* ---- Footer ---- */
+footer { background: #0F2347; padding: 2.25rem 0; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-name {
+  font-family: 'Noto Serif JP', serif; font-weight: 700;
+  font-size: .88rem; color: #fff; margin-bottom: .2rem;
+}
+.footer-sub { font-size: .72rem; color: #7890B0; }
+.footer-copy { font-size: .72rem; color: #7890B0; }
+
+/* ---- Notice box ---- */
+.notice-box {
+  background: #F0F4FF; border: 1px solid #C0CFEE;
+  border-left: 4px solid #1A3A6B; border-radius: 4px; padding: 1.1rem 1.4rem;
+}
+.notice-box strong { font-size: .875rem; color: #1A3A6B; font-weight: 700; display: block; margin-bottom: .4rem; }
+.notice-box p { font-size: .83rem; color: #333; line-height: 1.8; margin: 0; }
+
+/* ---- Responsive ---- */
+@media(max-width:768px){
+  .hero-bg{ width: 100%; opacity: .12; }
+  .hero-overlay{ width: 100%; background: linear-gradient(to bottom, rgba(255,255,255,.96) 60%, rgba(255,255,255,.7) 100%); }
+  .hero-content{ padding: 4rem 1.25rem 3rem; }
+  .flow-cta{ flex-direction: column; }
+}
+
+</style>
+<!-- ========== HEADER ========== -->
+<header id="site-header">
+  <div class="header-inner">
+    <div>
+      <a href="#" style="text-decoration:none;">
+        <span class="logo-main">プッシュ型コンサルティング事業構築研修</span>
+        <span class="logo-sub">人材開発支援助成金（事業展開等リスキリング支援コース）活用</span>
+      </a>
+    </div>
+    <nav class="site-nav">
+      <a href="#about">研修概要</a>
+      <a href="#curriculum">カリキュラム</a>
+      <a href="#subsidy">助成額</a>
+      <a href="#flow">申請の流れ</a>
+      <a href="#docs">申請書類</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#about" onclick="closeMenu()">研修概要</a>
+    <a href="#curriculum" onclick="closeMenu()">カリキュラム</a>
+    <a href="#subsidy" onclick="closeMenu()">助成額</a>
+    <a href="#flow" onclick="closeMenu()">申請の流れ</a>
+    <a href="#docs" onclick="closeMenu()">申請書類</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#contact" onclick="closeMenu()">お問い合わせ</a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-label">
+        <span class="badge-navy">人材開発支援助成金 活用</span>
+        <span class="badge-gold">令和4〜8年度 期間限定 ／ 中小企業 経費75%助成</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="accent">プッシュ型コンサルティング</span><br>
+        事業構築研修
+        <span class="sub">新たなコンサルティング事業に必要な実務能力を、<br>国の助成金を活用して習得する</span>
+      </h1>
+      <p class="hero-desc">
+        顧客課題の診断・支援方針の設計・提案・受注・案件進行・継続提案まで、<br>
+        コンサルティング事業を担う従業員の専門的知識と技能を体系的に習得。<br>
+        同時双方向型オンライン研修（全6回・24時間）で、申請書類の作成から<br>
+        研修実施・支給申請まで一括サポートします。
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">お問い合わせ・無料相談</a>
+        <a href="#about" class="btn-outline">研修内容を詳しく見る</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-label">中小企業 経費助成率</div>
+        <div class="stat-value">75%</div>
+        <div class="stat-note">（大企業60%）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">賃金助成</div>
+        <div class="stat-value">1,000円/h</div>
+        <div class="stat-note">中小企業（大企業500円）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">総訓練時間</div>
+        <div class="stat-value">24時間</div>
+        <div class="stat-note">4時間×6回</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="section-en">ABOUT</span>
+      <h2 class="section-h2">研修概要</h2>
+      <p class="section-lead">
+        本研修は、申請事業主が新たに取り入れるコンサルティング事業に従事する予定の従業員を対象として、
+        顧客課題の把握・支援方針の整理・提案設計・受注後の案件進行・社内連携・継続提案に必要な
+        専門的な知識及び技能を習得させることを目的とします。
+      </p>
+    </div>
+
+    <table class="spec-table" style="margin-bottom:2.5rem;">
+      <tr><th>研修名</th><td>プッシュ型コンサルティング事業構築研修</td></tr>
+      <tr><th>実施形式</th><td>同時双方向型オンライン研修</td></tr>
+      <tr><th>総訓練時間</th><td>24時間（4時間×全6回）</td></tr>
+      <tr><th>対象者</th><td>新たなコンサルティング事業において、営業・実務支援・バックオフィスのいずれか（または複数）の役割を担う予定の雇用保険被保険者（経営者・役員は対象外）</td></tr>
+      <tr><th>助成金コース</th><td>人材開発支援助成金（事業展開等リスキリング支援コース）</td></tr>
+      <tr><th>位置づけ</th><td>人材開発支援助成金提出書類への転用を前提とした研修カリキュラム</td></tr>
+    </table>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>研修の目的</h3>
+        <p>
+          本研修で扱う補助金・助成金等の制度情報は、申請書作成・提出代行等の手続実務を教えるものではなく、
+          顧客の経営課題を整理し、支援方針を検討する際の選択肢の一部として扱います。
+          研修の中心は、課題診断型のコンサルティング業務を社内で遂行するための
+          <strong>営業・診断・提案・進行管理・継続提案の実務能力</strong>です。
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>到達目標</h3>
+        <p>
+          ① 顧客の経営課題を分類・整理し、支援可能性を見立てられる<br>
+          ② 複数の支援手段を組み合わせたコンサルティング提案を設計できる<br>
+          ③ 提案・受注プロセスを実務として遂行できる<br>
+          ④ 受注後の案件進行・社内連携を適切に管理できる<br>
+          ⑤ AIツールを活用して業務を効率化できる
+        </p>
+      </div>
+    </div>
+
+    <div class="notice-box">
+      <strong>助成金適用上の設計方針</strong>
+      <p>
+        本研修は「通常の事業活動として遂行されるものを目的とする訓練」に該当しないよう、
+        架空ケース・訓練用ケースを用いた演習で構成しています。
+        申請実務（申請書作成・提出代行）を教える内容は含まず、
+        新事業に従事する従業員の職務能力開発として設計しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CURRICULUM ========== -->
+<section id="curriculum" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="section-en">CURRICULUM</span>
+      <h2 class="section-h2">カリキュラム（全6回・24時間）</h2>
+      <p class="section-lead">
+        各回4時間。講義・ケース解説・ロールプレイ・演習を組み合わせ、
+        実務で即使える知識と技能を段階的に習得します。
+      </p>
+    </div>
+
+    <div class="curriculum-grid">
+      <!-- 第1回 -->
+      <div class="curr-card">
+        <div class="curr-card-head">
+          <span class="curr-num">01</span>
+          <span class="curr-title">新事業としてのプッシュ型コンサルティング業務の理解</span>
+        </div>
+        <div class="curr-card-body">
+          <p class="curr-desc">制度や商品を売るのではなく、顧客の経営課題を把握し、支援方針を組み立てる職務であることを学ぶ。</p>
+          <table class="curr-table">
+            <tr><td>0.5h</td><td>プッシュ型コンサルティングとは何か：従来の営業との違い</td><td>講義・ケース解説</td></tr>
+            <tr><td>1.0h</td><td>営業・実務支援・バックオフィスの役割分担と案件の流れ</td><td>講義・業務フロー整理</td></tr>
+            <tr><td>1.0h</td><td>顧客課題から支援テーマへつなげる基本プロセス</td><td>ケース演習</td></tr>
+            <tr><td>0.5h</td><td>振り返り・質疑応答・次回準備</td><td>質疑応答</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 第2回 -->
+      <div class="curr-card">
+        <div class="curr-card-head">
+          <span class="curr-num">02</span>
+          <span class="curr-title">顧客課題診断とヒアリング実務</span>
+        </div>
+        <div class="curr-card-body">
+          <p class="curr-desc">顧客の表面的な要望だけでなく、その背景にある経営課題を整理する方法を学ぶ。</p>
+          <table class="curr-table">
+            <tr><td>0.5h</td><td>初回商談における課題診断の目的と進め方</td><td>講義</td></tr>
+            <tr><td>1.0h</td><td>売上・人材・採用・DX・業務改善・資金繰り等の課題分類</td><td>講義・ケース解説</td></tr>
+            <tr><td>1.0h</td><td>顧客の課題を聞き出す質問設計と深掘り方法</td><td>ロールプレイ</td></tr>
+            <tr><td>1.0h</td><td>ヒアリング内容を整理し、支援可能性を見立てる方法</td><td>ケース演習</td></tr>
+            <tr><td>0.5h</td><td>振り返り・質疑応答</td><td>質疑応答</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 第3回 -->
+      <div class="curr-card">
+        <div class="curr-card-head">
+          <span class="curr-num">03</span>
+          <span class="curr-title">支援方針の設計と提案メニュー化</span>
+        </div>
+        <div class="curr-card-body">
+          <p class="curr-desc">顧客課題に対して複数の支援手段を組み合わせてコンサルティング提案へ整理する方法を学ぶ。</p>
+          <table class="curr-table">
+            <tr><td>0.5h</td><td>課題診断結果を支援方針へ変換する考え方</td><td>講義</td></tr>
+            <tr><td>1.0h</td><td>研修・DX支援・業務改善・制度活用・伴走支援の組み合わせ方</td><td>講義・ケース解説</td></tr>
+            <tr><td>1.0h</td><td>診断・提案・実行支援・伴走支援の4段階プラン設計</td><td>演習</td></tr>
+            <tr><td>1.0h</td><td>顧客状態に応じた支援範囲の切り分け</td><td>ケース演習</td></tr>
+            <tr><td>0.5h</td><td>振り返り・質疑応答</td><td>質疑応答</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 第4回 -->
+      <div class="curr-card">
+        <div class="curr-card-head">
+          <span class="curr-num">04</span>
+          <span class="curr-title">提案・受注プロセスの実務</span>
+        </div>
+        <div class="curr-card-body">
+          <p class="curr-desc">診断結果を顧客に伝え、支援内容を提案し、受注へつなげるための実務を学ぶ。</p>
+          <table class="curr-table">
+            <tr><td>0.5h</td><td>提案・受注プロセスの全体像</td><td>講義</td></tr>
+            <tr><td>1.0h</td><td>顧客課題・支援方針・実施範囲・期待効果の整理方法</td><td>講義・ケース解説</td></tr>
+            <tr><td>1.0h</td><td>提案時の説明順序・反論対応・合意形成の進め方</td><td>ロールプレイ</td></tr>
+            <tr><td>1.0h</td><td>受注に向けた次アクション・社内引き継ぎ・案件化の流れ</td><td>演習</td></tr>
+            <tr><td>0.5h</td><td>振り返り・質疑応答</td><td>質疑応答</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 第5回 -->
+      <div class="curr-card">
+        <div class="curr-card-head">
+          <span class="curr-num">05</span>
+          <span class="curr-title">受注後の案件進行管理と社内連携</span>
+        </div>
+        <div class="curr-card-body">
+          <p class="curr-desc">受注後に顧客支援を滞りなく進めるための案件管理と、部門間連携の方法を学ぶ。</p>
+          <table class="curr-table">
+            <tr><td>0.5h</td><td>受注後の案件進行フロー</td><td>講義</td></tr>
+            <tr><td>1.0h</td><td>顧客から必要情報を回収する手順・期限管理・確認事項の整理</td><td>講義・演習</td></tr>
+            <tr><td>1.0h</td><td>営業・実務支援・バックオフィスの連携方法</td><td>ケース演習</td></tr>
+            <tr><td>1.0h</td><td>進捗遅延・情報不足・顧客対応上のリスク管理</td><td>ケース演習</td></tr>
+            <tr><td>0.5h</td><td>振り返り・質疑応答</td><td>質疑応答</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 第6回 -->
+      <div class="curr-card">
+        <div class="curr-card-head">
+          <span class="curr-num">06</span>
+          <span class="curr-title">継続提案・アップセル設計とAI/DX活用</span>
+        </div>
+        <div class="curr-card-body">
+          <p class="curr-desc">単発案件を継続的なコンサルティング事業へ発展させる考え方と、AI・DXを業務補助として活用する方法を学ぶ。</p>
+          <table class="curr-table">
+            <tr><td>0.5h</td><td>単発支援から継続支援へ広げる考え方</td><td>講義</td></tr>
+            <tr><td>1.0h</td><td>研修追加・DX支援・業務改善・月次相談等への提案導線</td><td>講義・ケース解説</td></tr>
+            <tr><td>1.0h</td><td>AIを活用したヒアリング整理・議事録・提案構成・顧客フォロー文面作成</td><td>演習</td></tr>
+            <tr><td>1.0h</td><td>顧客別の継続提案シナリオ設計</td><td>ケース演習</td></tr>
+            <tr><td>0.5h</td><td>研修全体の振り返り・今後の実務展開</td><td>質疑応答</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SUBSIDY ========== -->
+<section id="subsidy" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="section-en">SUBSIDY AMOUNT</span>
+      <h2 class="section-h2">助成額・助成率</h2>
+    </div>
+    <div class="subsidy-table-wrap">
+      <table class="subsidy-table">
+        <thead>
+          <tr>
+            <th>助成種別</th>
+            <th class="center">中小企業</th>
+            <th class="center">大企業</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>経費助成率（OFF-JT）</td>
+            <td class="val-sme val-big">75%</td>
+            <td class="val-large val-large-big">60%</td>
+          </tr>
+          <tr>
+            <td>賃金助成（OFF-JT 1人1時間あたり）</td>
+            <td class="val-sme val-mid">1,000円</td>
+            <td class="val-large val-large-mid">500円</td>
+          </tr>
+          <tr>
+            <td>1事業所1年度あたり助成限度額</td>
+            <td class="val-sme val-mid">1億円</td>
+            <td class="val-large val-large-mid">1億円</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="calc-box">
+      <h3>試算例：中小企業が社員1名に本研修（24時間）を受講させた場合</h3>
+      <div class="calc-grid">
+        <div class="calc-item">
+          <div class="calc-item-label">受講料（税込・例）</div>
+          <div class="calc-item-val">300,000円</div>
+          <div class="calc-item-note">実際の費用</div>
+        </div>
+        <div class="calc-item">
+          <div class="calc-item-label">経費助成（75%）</div>
+          <div class="calc-item-val">225,000円</div>
+          <div class="calc-item-note">国が負担</div>
+        </div>
+        <div class="calc-item">
+          <div class="calc-item-label">賃金助成（24h×1,000円）</div>
+          <div class="calc-item-val">24,000円</div>
+          <div class="calc-item-note">国が負担</div>
+        </div>
+        <div class="calc-item">
+          <div class="calc-item-label">企業の実質負担</div>
+          <div class="calc-item-val">51,000円</div>
+          <div class="calc-item-note">受講料の17%のみ</div>
+        </div>
+      </div>
+      <p class="calc-note">※ 試算例です。実際の助成額は訓練内容・受講者数・申請状況により異なります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FLOW ========== -->
+<section id="flow" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="section-en">APPLICATION FLOW</span>
+      <h2 class="section-h2">申請の流れ</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <span class="step-badge">STEP 1</span>
+        <h3>無料相談・ヒアリング</h3>
+        <p>事業展開の内容・研修ニーズ・対象社員をヒアリング。助成金の適用可否を確認します。</p>
+        <span class="timing-badge">訓練開始の2〜3ヶ月前</span>
+      </div>
+      <div class="flow-card">
+        <span class="step-badge">STEP 2</span>
+        <h3>訓練カリキュラム設計</h3>
+        <p>助成対象となる訓練内容・時間数・講師要件を満たすカリキュラムを確定します。</p>
+        <span class="timing-badge">訓練開始の1〜2ヶ月前</span>
+      </div>
+      <div class="flow-card">
+        <span class="step-badge">STEP 3</span>
+        <h3>計画届の提出</h3>
+        <p>「職業訓練実施計画届（様式第1-1号）」を都道府県労働局に提出。訓練開始前の提出が必須です。</p>
+        <span class="timing-badge">訓練開始前（必須）</span>
+      </div>
+      <div class="flow-card">
+        <span class="step-badge">STEP 4</span>
+        <h3>研修の実施</h3>
+        <p>計画届に沿って研修を実施。出席記録・オンライン入退室ログ・受講証明書等の書類を整備します。</p>
+        <span class="timing-badge">訓練期間中</span>
+      </div>
+      <div class="flow-card">
+        <span class="step-badge">STEP 5</span>
+        <h3>支給申請</h3>
+        <p>訓練終了後2ヶ月以内に支給申請書類を提出。経費・賃金の証明書類を添付します。</p>
+        <span class="timing-badge">訓練終了後2ヶ月以内</span>
+      </div>
+      <div class="flow-card">
+        <span class="step-badge">STEP 6</span>
+        <h3>助成金の受給</h3>
+        <p>審査完了後、指定口座に助成金が振り込まれます。</p>
+        <span class="timing-badge">申請後 数ヶ月</span>
+      </div>
+    </div>
+    <div class="flow-cta">
+      <div class="flow-cta-text">
+        <h4>全ステップをサポートします</h4>
+        <p>ヒアリングから計画届の作成・提出、研修実施、支給申請まで、煩雑な手続きを一括サポート。初めての申請でも安心してお任せください。</p>
+      </div>
+      <a href="#contact" class="btn-gold">お問い合わせ・無料相談</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DOCS ========== -->
+<section id="docs" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="section-en">REQUIRED DOCUMENTS</span>
+      <h2 class="section-h2">申請に必要な書類</h2>
+      <p class="section-lead">
+        本研修の申請にあたって必要な書類一覧です。書類作成・確認もサポートします。
+      </p>
+    </div>
+    <div class="docs-grid">
+      <div class="doc-card">
+        <span class="doc-num">01</span>
+        <div>
+          <h3>職業訓練実施計画届（様式第1-1号）</h3>
+          <p>訓練名・訓練期間・実施方法・総訓練時間・対象者数・訓練内容概要を記載。訓練開始前の提出が必須。</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-num">02</span>
+        <div>
+          <h3>事業展開等実施計画（様式第1-3号）</h3>
+          <p>新たに取り入れるコンサルティング事業の内容・対象者が習得する知識・技能・事業展開との関係を記載。</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-num">03</span>
+        <div>
+          <h3>訓練カリキュラム・受講案内</h3>
+          <p>各回テーマ・実施日時・訓練内容・実訓練時間数・実施方法・受講料を記載した書類。</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-num">04</span>
+        <div>
+          <h3>対象労働者一覧（様式第3-1号）</h3>
+          <p>新事業に従事予定の営業・実務支援・バックオフィス担当者の一覧。</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-num">05</span>
+        <div>
+          <h3>事前確認書（様式第11号）</h3>
+          <p>職務関連訓練であること・業務上義務付けられた訓練であること・計画に沿って実施することを確認。</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-num">06</span>
+        <div>
+          <h3>支給申請時資料</h3>
+          <p>出席簿・オンライン入退室ログ・研修実施報告・使用教材・受講時間記録等。</p>
+        </div>
+      </div>
+    </div>
+    <div class="notice-box" style="margin-top:2rem;">
+      <strong>OFF-JT講師要件（様式第10号）について</strong>
+      <p>
+        外部講師を活用する場合、講師の要件確認書（様式第10号）の提出が必要です。
+        講師が「3年以上の実務経験を有する者」等の要件を満たしているかを確認します。
+        講師要件の確認・書類準備もサポートします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="section-en">FAQ</span>
+      <h2 class="section-h2">よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">本研修は助成金の対象になりますか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">はい。本研修は人材開発支援助成金（事業展開等リスキリング支援コース）の対象として設計されています。新たなコンサルティング事業に従事する予定の雇用保険被保険者が対象で、訓練開始前に計画届を提出することが条件です。</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">経営者・役員も受講できますか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">人材開発支援助成金の対象は雇用保険被保険者（従業員）です。経営者・役員は雇用保険の被保険者にならないため、助成金の対象外となります。受講自体は可能ですが、その分の助成は受けられません。</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">オンライン研修でも助成対象になりますか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">はい。本研修は同時双方向型オンライン研修（Zoom等）で実施するため、OFF-JTとして助成対象になります。入退室ログ等の記録を適切に管理することが必要です。</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">申請書類の作成は自社でやらなければなりませんか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">いいえ。計画届・カリキュラム・対象労働者一覧・事前確認書等の書類作成から、都道府県労働局への提出サポートまで一括でお手伝いします。初めての申請でも安心してお任せください。</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">何名から申請できますか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">1名から申請可能です。複数名を同時に申請することもできます。1事業所あたり年度上限1億円の範囲内で、複数の訓練計画を組み合わせることも可能です。</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">「事業展開」の要件はどのように満たせばよいですか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">新たにコンサルティング事業を取り入れることが「事業展開」に該当します。経営方針や事業計画にコンサルティング事業の開始を明記し、訓練が新事業に必要な知識・技能の習得であることを計画届に記載します。具体的な記載方法はヒアリング時にご案内します。</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <div class="faq-q-wrap"><span class="faq-q-mark">Q</span><span class="faq-q-text">研修の内容は補助金・助成金の申請実務を教えるものですか？</span></div>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-a-wrap"><span class="faq-a-mark">A</span><p class="faq-a-text">いいえ。本研修は補助金・助成金の申請書作成・提出代行等の手続実務を教えるものではありません。顧客課題の診断・支援方針の設計・提案・受注・案件進行・継続提案という「コンサルティング業務の実務能力」を習得する研修です。制度情報は支援方針検討の選択肢の一部として扱います。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div>
+        <span class="contact-en">CONTACT</span>
+        <h2 class="contact-h2">お問い合わせ・無料相談</h2>
+        <p class="contact-lead">
+          「自社が助成対象になるか分からない」「どんな手続きが必要か知りたい」
+          そんな段階でも構いません。お気軽にご連絡ください。
+          ヒアリングから計画届の作成・提出、研修実施、支給申請まで一括サポートします。
+        </p>
+        <div class="contact-meta">
+          <div>
+            <div class="contact-meta-label">相談料</div>
+            <div class="contact-meta-val">無料</div>
+          </div>
+          <div>
+            <div class="contact-meta-label">対応エリア</div>
+            <div class="contact-meta-val">全国対応（オンライン可）</div>
+          </div>
+          <div>
+            <div class="contact-meta-label">回答目安</div>
+            <div class="contact-meta-val">1営業日以内</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-title">お問い合わせ・無料相談</p>
+        <p class="contact-card-sub">メールまたはオンラインで<br>お気軽にご相談ください</p>
+        <a href="https://fp-1.info/hojokin/#cta" target="_blank" rel="noopener" class="btn-contact-primary">メールで相談する</a>
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2nJnw6UrNZajn488eZ-GjxO3rvSZ2zKWE-1qDQ4Ld8eRoWxLyujWD2BRuSXea078phLTlvHLsy?gv=true" target="_blank" rel="noopener" class="btn-contact-secondary">無料相談を予約する</a>
+        <p class="contact-hours">平日 9:00〜18:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-name">プッシュ型コンサルティング事業構築研修</p>
+        <p class="footer-sub">人材開発支援助成金（事業展開等リスキリング支援コース）活用</p>
+      </div>
+      <p class="footer-copy">© 2025 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+function toggleFaq(btn) {
+  var answer = btn.nextElementSibling;
+  var toggle = btn.querySelector('.faq-toggle');
+  var isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(function(a){ a.classList.remove('open'); });
+  document.querySelectorAll('.faq-toggle').forEach(function(t){ t.classList.remove('open'); });
+  if (!isOpen) {
+    answer.classList.add('open');
+    toggle.classList.add('open');
+  }
+}
+window.addEventListener('scroll', function() {
+  var h = document.getElementById('site-header');
+  h.style.background = window.scrollY > 40 ? '#0F2347' : '#1A3A6B';
+}, {passive: true});
+</script>
+<script>(function(){function k(){["header.wp-block-template-part",".wp-site-blocks > header",".wp-block-template-part[data-area=header]"].forEach(function(s){document.querySelectorAll(s).forEach(function(e){e.remove();});});}if(document.readyState!=="loading")k();else document.addEventListener("DOMContentLoaded",k);})();</script>
+
+
+</body>
+</html>

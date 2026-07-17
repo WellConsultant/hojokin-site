@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>補助金の電子申請手順</title>
+</head>
+<body>
+
+<style>
+
+/* WP変数リセット */
+:root,html,body{--wp--style--global--content-size:100%!important;--wp--style--global--wide-size:100%!important;--wp--style--root--padding-top:0!important;--wp--style--root--padding-right:0!important;--wp--style--root--padding-bottom:0!important;--wp--style--root--padding-left:0!important;}
+/* ボディリセット */
+body,body.page,body.home,body.single,body.single-post{margin:0!important;padding:0!important;padding-top:0!important;}
+/* WPブロック全幅化 */
+.wp-site-blocks,.wp-site-blocks>main,main.wp-block-group,.wp-block-group.has-global-padding,.wp-block-post-content,.entry-content,.wp-block-group.alignfull,.wp-block-group-is-layout-constrained,.wp-block-post-content-is-layout-constrained,.wp-block-html,article.post,article.page,.post,.hentry,.page{max-width:100%!important;width:100%!important;margin:0!important;padding:0!important;}
+.has-global-padding,.has-global-padding>.alignfull{padding-left:0!important;padding-right:0!important;}
+/* WPテーマヘッダー・ナビ・サイドバー非表示 */
+.wp-block-post-title,.entry-header,.entry-title,header.entry-header,.wp-block-template-part header,header.wp-block-template-part,.wp-site-blocks>header,.wp-block-site-title,.wp-block-navigation,.wp-block-template-part[data-area="header"],aside.sidebar,.widget-area,.sidebar,#secondary{display:none!important;}
+/* WP投稿メタ情報非表示（執筆者・カテゴリ等） */
+.entry-meta,.post-meta,.byline,.posted-on,.cat-links,.author,.tags-links,.comments-link,.wp-block-post-author,.wp-block-post-author__bio,.wp-block-post-author-name,.wp-block-post-date,.wp-block-post-terms,.wp-block-post-excerpt,p.has-text-align-right,.screen-reader-text{display:none!important;}
+/* WPテンプレート上部の余分なpadding/margin除去（inline style対策） */
+main.wp-block-group[style]{margin-top:0!important;padding-top:0!important;}
+.wp-block-group.alignfull[style]{padding-top:0!important;padding-bottom:0!important;}
+.wp-block-group.has-accent-4-color{display:none!important;}
+/* WP adminbar非表示 */
+#wpadminbar,#wpadminbar *{display:none!important;}
+html{margin-top:0!important;}
+/* WP footer非表示 */
+.wp-site-blocks>footer,.wp-block-template-part[data-area="footer"],footer.wp-block-template-part{display:none!important;}
+footer:not(.custom-footer){display:none!important;}
+/* WPテーマ投稿ナビゲーション非表示 */
+.post-navigation,.posts-navigation,.navigation.post-navigation,.navigation.posts-navigation,.nav-previous,.nav-next,.wp-block-query-pagination,.wp-block-query-pagination-next,.wp-block-query-pagination-previous,.more-link,a.more-link{display:none!important;}
+/* WP投稿ナビゲーションリンクブロック（実際に使われているクラス） */
+.wp-block-post-navigation-link,.post-navigation-link-previous,.post-navigation-link-next,nav[aria-label="投稿ナビゲーション"]{display:none!important;}
+/* 投稿をさらに読み込む（WPクエリブロック） */
+.wp-block-query{display:none!important;}
+/* WPコメント非表示 */
+#comments,.comments-area,.comment-respond,.wp-block-comments,.wp-comment-respond,.comment-list,.comment-form,.comments-pagination{display:none!important;}
+/* is-layout-constrained: wp-block-htmlブロックの幅制限を解除 */
+.is-layout-constrained>.wp-block-html,.is-layout-constrained>.wp-block-group:not(.alignwide):not(.alignfull){max-width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important;}
+/* 重複監修者ボックス（id="supervisor"のテンプレート部分）を非表示 */
+#supervisor{display:none!important;}
+/* === メニューバー上の隙間を消す（WP admin bar + wp-site-blocksの上余白を完全除去） === */
+html,html[lang]{margin-top:0!important;padding-top:0!important;}
+body,body.admin-bar,body.logged-in,body.wp-singular,body.single,body.single-post{margin:0!important;margin-top:0!important;padding:0!important;padding-top:0!important;}
+.wp-site-blocks{padding-top:0!important;margin-top:0!important;}
+.wp-site-blocks>main,.wp-site-blocks>main.wp-block-group,.wp-site-blocks>.wp-block-group,.wp-site-blocks>article,.wp-site-blocks>.wp-block-post-content{margin-top:0!important;margin-block-start:0!important;padding-top:0!important;}
+:where(.wp-site-blocks)>*,:where(.wp-site-blocks)>:first-child{margin-block-start:0!important;margin-top:0!important;}
+:where(.is-layout-flow)>*,:where(.is-layout-flow)>:first-child,:where(.is-layout-constrained)>*,:where(.is-layout-constrained)>:first-child{margin-block-start:0!important;margin-top:0!important;}
+@media screen and (min-width:783px){html{margin-top:0!important;}}
+/* === アイキャッチ画像のサイズ制限（デカすぎ対策） === */
+.article-hero{max-height:360px!important;overflow:hidden!important;border-radius:10px!important;margin:18px 0 28px!important;}
+.article-hero img{width:100%!important;height:100%!important;max-height:360px!important;object-fit:cover!important;display:block!important;}
+@media(max-width:768px){.article-hero{max-height:220px!important;}.article-hero img{max-height:220px!important;}}
+/* === サイドバージャンルカード画像サイズ強制（WPテーマが上書きするのを防ぐ） === */
+.sidebar-genre-img{height:90px!important;overflow:hidden!important;position:relative!important;}
+.sidebar-genre-img img{width:100%!important;height:100%!important;max-height:90px!important;object-fit:cover!important;display:block!important;}
+/* === 補助金フィードのサムネサイズ制限 === */
+.sidebar-feed{padding:12px!important;}
+.sidebar-feed img{width:100%!important;max-width:260px!important;height:auto!important;max-height:140px!important;display:block!important;margin:0 auto 8px!important;object-fit:cover!important;border-radius:4px!important;}
+/* === サイドバー上の見出し（補助金フィード等）を表示強制 === */
+.sidebar-section-title{display:block!important;visibility:visible!important;opacity:1!important;font-size:16px!important;font-weight:700!important;color:#1a3a5c!important;letter-spacing:0.02em!important;margin-bottom:14px!important;text-transform:none!important;line-height:1.4!important;}
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Sans','Yu Gothic',Meiryo,sans-serif;line-height:1.85;color:#222;background:#fafafa}
+img{max-width:100%;height:auto;display:block}
+a{color:#1a3a5c;text-decoration:underline}
+.site-header{background:#1a3a5c;color:#fff;padding:14px 20px}
+.site-header a{color:#fff;text-decoration:none;font-weight:700}
+.breadcrumb{background:#eef2f6;padding:10px 0;font-size:13px;color:#555}
+.breadcrumb a{color:#1a3a5c}
+.main-wrap{max-width:880px;margin:0 auto;padding:24px 20px;background:#fff}
+.article-cat{display:inline-block;background:#d35400;color:#fff;font-size:12px;padding:4px 12px;border-radius:3px;margin-bottom:12px}
+.article-title{font-size:28px;font-weight:700;line-height:1.4;margin-bottom:10px;color:#1a3a5c}
+.article-meta{color:#777;font-size:13px;margin-bottom:20px;border-bottom:1px solid #eee;padding-bottom:14px}
+.article-thumb{margin:18px 0}
+.article-thumb img{border-radius:6px;width:100%;border:1px solid #ddd}
+.lead-box{background:#f4f7fa;border-left:4px solid #1a3a5c;padding:16px 18px;margin:18px 0;font-size:15px}
+.toc{background:#fafafa;border:1px solid #ddd;padding:14px 18px;margin:20px 0;font-size:14px}
+.toc-title{font-weight:700;color:#1a3a5c;margin-bottom:8px}
+.toc ol{margin-left:20px}
+.toc a{color:#222;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.article-body h2{font-size:22px;color:#1a3a5c;border-left:5px solid #d35400;padding:6px 0 6px 12px;margin:32px 0 14px;background:#f6f8fa}
+.article-body h3{font-size:17px;color:#1a3a5c;margin:20px 0 8px;border-bottom:1px solid #d35400;padding-bottom:4px;display:inline-block}
+.article-body p{margin:10px 0;font-size:15px}
+.article-body ul,.article-body ol{margin:10px 0 10px 28px;font-size:15px}
+.article-body li{margin:4px 0}
+.compare-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.compare-table th,.compare-table td{border:1px solid #ccc;padding:8px 10px;text-align:left;vertical-align:top}
+.compare-table th{background:#1a3a5c;color:#fff;font-weight:700}
+.compare-table tbody tr:nth-child(even){background:#f8fafc}
+.type-list{list-style:none;margin-left:0!important}
+.type-list li{padding:8px 12px;background:#f4f7fa;border-left:3px solid #d35400;margin:6px 0!important}
+.point-box{background:#fff8ee;border:1px solid #ecb771;padding:14px 18px;margin:18px 0;border-radius:4px}
+.point-box-title{color:#d35400;font-weight:700;margin-bottom:6px}
+.point-box ul{margin-left:22px;margin-top:6px}
+figure{margin:16px 0;text-align:center}
+figcaption{font-size:13px;color:#666;margin-top:4px}
+.faq-section{margin:30px 0}
+.faq-section h2{font-size:22px;color:#1a3a5c;border-left:5px solid #d35400;padding:6px 0 6px 12px;margin:30px 0 14px;background:#f6f8fa}
+.faq-q{background:#1a3a5c;color:#fff;padding:10px 14px;margin-top:14px;border-radius:4px 4px 0 0;font-weight:700;font-size:15px}
+.faq-a{background:#f6f8fa;border:1px solid #d8dde2;border-top:none;padding:12px 14px;font-size:14px;border-radius:0 0 4px 4px}
+.supervisor-box{display:flex;gap:14px;background:#f4f7fa;border:1px solid #d8dde2;padding:16px;border-radius:6px;margin:24px 0;font-size:14px}
+.supervisor-box .sv-text{flex:1}
+.supervisor-box .sv-name{font-weight:700;color:#1a3a5c;font-size:16px;margin-bottom:6px}
+.related-section{margin:30px 0}
+.related-section h2{font-size:20px;color:#1a3a5c;border-left:5px solid #d35400;padding:6px 0 6px 12px;margin:20px 0 14px;background:#f6f8fa}
+.related-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.related-cards{grid-template-columns:1fr}}
+.related-card{display:block;background:#fff;border:1px solid #d8dde2;border-radius:6px;padding:14px;text-decoration:none;color:#1a3a5c;transition:box-shadow .15s}
+.related-card:hover{box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.related-card .rc-cat{font-size:12px;color:#d35400;font-weight:700;margin-bottom:6px}
+.related-card .rc-title{font-size:14px;line-height:1.5;font-weight:700;color:#222}
+.cta-box{background:#1a3a5c;color:#fff;padding:24px 20px;border-radius:8px;margin:30px 0;text-align:center}
+.cta-box h3{font-size:20px;margin-bottom:10px}
+.cta-box p{font-size:14px;margin:10px 0 16px;opacity:.92}
+.cta-box a{display:inline-block;background:#d35400;color:#fff;text-decoration:none;padding:12px 26px;border-radius:4px;font-weight:700}
+.site-footer{background:#1a3a5c;color:#bcd;text-align:center;padding:18px 12px;margin-top:30px;font-size:13px}
+#wpadminbar{display:none!important;}html{margin-top:0!important;}
+@media (max-width: 880px) {
+  .blog-nav .nav-links a:not(.nav-cta) { display: none !important; }
+}
+
+
+footer{background:#1f2937;color:#fff;padding:44px 24px 24px;}
+.footer-inner{max-width:880px;margin:0 auto;text-align:center;}
+.footer-nav{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px;justify-content:center;}
+.footer-nav a{font-size:13px;color:#fff;text-decoration:none;}
+.footer-nav a:hover{color:#fff;}
+.footer-legal{text-align:center;display:flex;gap:20px;margin-bottom:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.12);padding-top:16px;justify-content:center;}
+.footer-legal a{font-size:12px;color:#ccc;text-decoration:none;}
+.footer-legal a:hover{color:#fff;}
+.footer-copy{font-size:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;color:#aaa;}
+
+
+.blog-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#1a1a1a;}
+.blog-nav .nav-inner{max-width:1160px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:62px;}
+.blog-nav .nav-logo{color:#fff;font-weight:bold;font-size:14px;text-decoration:none;}
+.blog-nav .nav-links{display:flex;align-items:center;gap:24px;}
+.blog-nav .nav-links a{color:#fff;font-size:13px;text-decoration:none;transition:color 0.2s;}
+.blog-nav .nav-links a:hover{color:#fff;}
+.blog-nav .nav-cta{background:#d35400;color:#fff !important;padding:8px 20px;border-radius:4px;font-weight:bold;font-size:13px;}
+.blog-nav .nav-cta:hover{background:#b84600 !important;}
+.blog-nav-spacer{height: 62px;}
+
+
+.blog-core-offer{background:#f5f7fa;padding:28px 20px;margin:24px auto 0;max-width:1160px;border-radius:8px;}
+.blog-core-offer h2{text-align:center;font-size:22px;font-weight:900;color:#1a3a5c;margin-bottom:32px;border:none;padding:0;}
+.blog-core-offer-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:100%;margin:0;align-items:stretch;}
+.blog-core-card{background:#fff;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;flex-direction:column;transition:box-shadow 0.2s;}
+.blog-core-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.14);}
+.blog-core-thumb{position:relative;}
+.blog-core-thumb img{width:100%;height:180px;object-fit:cover;display:block;}
+.blog-core-thumb-label{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.6);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;}
+.blog-core-card-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+.blog-core-card-body h3{font-size:15px;font-weight:900;color:#1a3a5c;margin-bottom:10px;border:none;padding:0;}
+.blog-core-card-body p{font-size:13px;color:#555;line-height:1.7;margin-bottom:16px;}
+.blog-core-card-cta{display:block;margin-top:auto;background:#d35400;color:#fff;text-align:center;padding:10px 8px;border-radius:4px;font-size:13px;font-weight:700;line-height:1.4;}
+@media(max-width:680px){.blog-core-offer-cards{grid-template-columns:1fr;}}
+
+
+.page-layout{display:flex!important;flex-direction:row!important;gap:32px;max-width:1160px;margin:0 auto;padding:32px 20px 60px;align-items:flex-start!important;}
+.main-wrap{flex:1!important;min-width:0!important;padding:0;}
+.blog-sidebar{width:260px!important;flex-shrink:0!important;position:sticky;top:78px;}
+.sidebar-section-title{font-size:12px;font-weight:700;color:#888;letter-spacing:0.08em;margin-bottom:12px;text-transform:uppercase;}
+.sidebar-genre-card{display:block;text-decoration:none;border-radius:6px;overflow:hidden;margin-bottom:10px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:box-shadow 0.2s;}
+.sidebar-genre-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+.sidebar-genre-img{position:relative;height:90px;overflow:hidden;}
+.sidebar-genre-img img{width:100%;height:100%;object-fit:cover;}
+.sidebar-genre-badge{position:absolute;bottom:0;left:0;right:0;padding:4px 8px;font-size:11px;font-weight:700;color:#fff;}
+.sidebar-genre-badge.orange{background:rgba(211,84,0,0.9);}
+.sidebar-genre-badge.navy{background:rgba(26,58,92,0.9);}
+.sidebar-genre-badge.green{background:rgba(46,125,50,0.9);}
+.sidebar-genre-body{padding:10px 12px;}
+.sidebar-genre-body p{font-size:12px;color:#555;line-height:1.5;margin-bottom:6px;}
+.sidebar-genre-link{font-size:12px;font-weight:700;color:#1a3a5c;text-align:right;display:block;}
+.sidebar-feed{display:block;text-decoration:none;background:#f0f4f8;border:1px solid #b8ccdf;border-radius:6px;overflow:hidden;margin-bottom:10px;font-size:13px;font-weight:700;color:#1a3a5c;text-align:center;transition:background 0.2s;}.sidebar-feed img{width:100%;height:auto;display:block;border-radius:0;}.sidebar-feed-label{padding:8px 16px 10px;display:block;}
+.sidebar-feed:hover{background:#dce6f0;}
+.sidebar-consult{display:block;text-decoration:none;background:#d35400;color:#fff;border-radius:6px;padding:14px 16px;font-size:14px;font-weight:700;text-align:center;transition:background 0.2s;}
+.sidebar-consult:hover{background:#b84600;}
+@media(max-width:900px){.page-layout{flex-direction:column!important;}.blog-sidebar{width:100%;position:static;}}
+
+
+/* MOBILE_MENU_v1 */
+.nav-hamburger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;padding:4px 10px;line-height:1;margin-left:8px;}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#1a1a1a;flex-direction:column;padding:8px 24px 20px;z-index:99;border-top:1px solid #333;box-shadow:0 6px 16px rgba(0,0,0,0.4);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid #333;font-size:14px;}
+.mobile-menu a:last-child{border-bottom:0;}
+.mobile-menu .nav-cta{background:#d35400;text-align:center;border-radius:4px;font-weight:bold;margin-top:10px;border:0!important;padding:14px 0;}
+@media(max-width:880px){.nav-hamburger{display:inline-block!important;}}
+/* MOBILE_SIDEBAR_HIDE_v1 */
+@media(max-width:880px){
+  .blog-sidebar{display:none!important;}
+  .page-layout{display:block!important;flex-direction:column!important;}
+  .main-wrap{width:100%!important;max-width:100%!important;flex:none!important;}
+}
+
+
+
+/* === layout force override (Grid方式 / sticky対応) === */
+.page-layout{display:grid!important;grid-template-columns:minmax(0,1fr) 260px!important;gap:32px!important;align-items:start!important;width:100%!important;max-width:1160px!important;margin:0 auto!important;padding:0 20px 60px!important;box-sizing:border-box!important;overflow:visible!important;}
+.main-wrap{min-width:0!important;visibility:visible!important;opacity:1!important;overflow:visible!important;}
+.blog-sidebar{width:260px!important;position:sticky!important;top:78px!important;align-self:start!important;max-height:calc(100vh - 90px)!important;overflow-y:auto!important;}
+.blog-nav-spacer{display:none!important;}
+/* CORE OFFER とフッターも本文と同じ幅で中央揃え */
+.blog-core-offer{max-width:1160px!important;margin:40px auto 20px!important;padding:40px 20px!important;box-sizing:border-box!important;}
+.blog-core-offer-cards{max-width:1120px!important;margin:0 auto!important;}
+.custom-footer .footer-inner{max-width:1160px!important;margin:0 auto!important;}
+@media(max-width:900px){.page-layout{display:block!important;padding:0 16px 40px!important;}.main-wrap{display:block!important;width:100%!important;padding-right:0!important;}.blog-sidebar{display:block!important;width:100%!important;position:static!important;max-height:none!important;overflow:visible!important;}.blog-core-offer{padding:24px 16px!important;}}
+
+</style>
+<nav class="blog-nav">
+  <div class="nav-inner">
+    <a href="https://fp-1.info/hojokin/" class="nav-logo">補助金活用型経営を進めるガイド</a>
+    <div class="nav-links">
+      <a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <button class="nav-hamburger" aria-label="メニュー">☰</button><a href="https://fp-1.info/hojokin/#cta" class="nav-cta">無料相談</a>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+<a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <a href="https://fp-1.info/hojokin/#cta" class="nav-cta">無料相談</a>
+</div>
+<div class="blog-nav-spacer"></div>
+<nav class="breadcrumb"><div class="breadcrumb-inner" style="max-width:1160px;margin:0 auto;padding:0 20px;"><a href="https://fp-1.info/hojokin/">ホーム</a> ＞ <a href="./">ブログ</a> ＞ 補助金の電子申請手順｜jGrantsとGビズIDの使い方</nav>
+<div class="page-layout" style="display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start;width:100%;max-width:1160px;margin:0 auto;padding:0 20px 60px;box-sizing:border-box;overflow:visible;">
+<div class="main-wrap" style="min-width:0;visibility:visible;opacity:1;overflow:visible;">
+<article>
+<div class="article-cat">補助金獲得</div>
+<h1 class="article-title">補助金の電子申請手順｜jGrantsとGビズIDの使い方</h1>
+<div class="article-meta">公開日：2026-05-16　更新日：2026-05-16</div>
+<div class="article-thumb"><img src="/hojokin/wp-content/uploads/2026/05/jgrants-guide_thumb-20.jpg" alt="補助金の電子申請手順｜jGrantsとGビズIDの使い方"></div>
+<div class="lead-box">主要補助金の多くは、jGrants（電子申請ポータル）からの申請が基本になっています。本記事では2026年5月時点のjGrants運用を参考に、GビズIDによるログインから申請完了までの基本手順と、電子申請特有の注意点を整理します。</div>
+<div class="toc"><div class="toc-title">目次</div><ol><li><a href="#h2-1">jGrantsとはどんなシステムか</a></li><li><a href="#h2-2">jGrantsを使うための事前準備</a></li><li><a href="#h2-3">jGrantsでの申請の基本手順</a></li><li><a href="#h2-4">電子申請で注意したいポイント</a></li><li><a href="#h2-5">申請後の流れ</a></li><li><a href="#faq">よくある質問</a></li></ol></div>
+<div class="article-body">
+<h2 id="h2-1">jGrantsとはどんなシステムか</h2>
+<p>jGrantsは、デジタル庁・経済産業省が運用する補助金の電子申請ポータルです。複数の補助金を1つのシステムで申請・管理でき、申請から採択・交付申請・実績報告までを電子化する仕組みです。書類郵送・持参の手間が省ける一方、電子申請特有のルール（ファイルサイズ制限・添付形式・保存運用など）に慣れる必要があります。</p>
+<p>jGrants導入前は、各補助金の事務局にそれぞれ申請書類を郵送する運用が一般的でした。制度が補助金ごとに異なるため、担当窓口を調べるだけでも手間がかかることがありました。jGrantsが整備されたことで、主要な補助金の申請を一箇所から行えるようになり、申請者側の作業負担が大きく変わっています。</p>
+<p>ただし、jGrantsはシステムとして継続的に改修が加えられており、年度や公募回次によって画面のレイアウトや操作の流れが変わることがあります。本記事は2026年5月時点の運用を参考にまとめていますが、実際に申請される際は公式の操作マニュアルや公募要領を併せてご確認ください。</p>
+<p>jGrantsに対応している主な補助金には、ものづくり補助金・持続化補助金・IT導入補助金・事業承継・引継ぎ補助金などがあります。補助金によってjGrantsの利用が必須とされているものと、そうでないものがあるため、申請したい補助金の公募要領で電子申請の要件を最初に確認することが大切です。</p>
+
+<h2 id="h2-2">jGrantsを使うための事前準備</h2>
+
+<p>jGrantsの利用にはGビズIDプライムが必要です。GビズIDエントリーでは利用範囲が制限されており、補助金申請ができないケースが多くなっています。GビズIDプライムは書類郵送で1〜2週間、マイナンバーカードを使ったオンライン申請で短期間で取得できることがあります。</p>
+<p>GビズIDは「デジタル庁が運営する法人・個人事業主向けの認証システム」です。補助金申請以外にも、社会保険の電子申請や経産省の各種手続きでも使えるため、一度取得しておくと今後の行政手続き全般に活用できます。まだ取得していない場合は、補助金の公募発表を待たずに早めに申請しておくことをおすすめします。</p>
+<p>GビズIDプライムを取得する際は、登記簿謄本（法人の場合）や印鑑証明書など複数の書類が必要になることがあります。書類の準備から郵送・審査・ID発行まで、余裕をもって2〜3週間程度を見込んでおくと安心です。公募が始まってから慌てて申請すると、締切までにIDが届かないことがあります。</p>
+
+<h3>準備するもの</h3>
+<p>jGrantsの利用開始で最も時間がかかるのはGビズIDプライムの取得です。書類郵送の場合は審査に1〜2週間程度かかることがあるため、補助金の公募開始前に取得を済ませておくことが重要です。公募開始後に慌てて申請すると、締切に間に合わないことがあります。</p>
+<ul class="type-list">
+<li>GビズIDプライム（取得まで日数がかかる）</li>
+<li>パソコン・ブラウザ（最新版を推奨）</li>
+<li>SMS受信できる携帯電話（2段階認証）</li>
+<li>事業計画書・財務諸表・見積書などのPDF</li>
+</ul>
+<p>添付書類はあらかじめPDF形式で用意しておきます。ファイルサイズが大きいとアップロードに失敗することがあるため、事前に圧縮しておくと作業がスムーズです。ブラウザはjGrantsが動作確認しているものを使うと、入力中のエラーを減らせます。</p>
+<p>事業計画書は補助金申請の中核となる書類です。jGrantsでは事業計画書の様式が補助金ごとに定められていることがあり、指定の様式以外では受け付けられないケースもあります。公募要領と一緒に様式ファイルをあらかじめ入手して、準備に十分な時間をとることが採択の可能性を高める基本的な考え方です。</p>
+
+<h2 id="h2-3">jGrantsでの申請の基本手順</h2>
+<p>申請の基本フローは次のとおりです。補助金によって細部が異なりますが、共通する流れです。jGrantsに初めてログインしたとき、画面の構成に慣れるまで多少時間がかかることがあります。はじめてjGrantsを使う場合は、締切の1週間以上前に一度ログインして画面を確認しておくと、本番申請がスムーズに進む場合が多いです。</p>
+<p>各ステップの中でも、申請フォームへの入力は最も時間がかかる作業です。入力途中でセッションが切れることがあるため、長文を入力する前にテキストエディタで下書きしておき、コピー貼り付けで対応すると作業を失うリスクを減らせます。</p>
+<ol class="type-list">
+<li><strong>ログイン</strong>GビズIDで認証、SMSワンタイムパスワード入力</li>
+<li><strong>申請する補助金を選択</strong>jGrants内の公募中補助金一覧から選ぶ</li>
+<li><strong>申請フォームに入力</strong>事業者情報・事業計画・経費明細などをフォームに入力</li>
+<li><strong>添付書類をアップロード</strong>事業計画書・見積書・登記簿・決算書などのPDF</li>
+<li><strong>申請内容の確認</strong>入力内容と添付書類を最終確認</li>
+<li><strong>申請提出</strong>提出ボタンを押すと事務局に送信</li>
+<li><strong>受付完了通知の確認</strong>jGrants内のステータスとメール通知で確認</li>
+</ol>
+<p>申請フォームへの入力内容は、入力画面を進むにつれて前のページに戻れなくなることがあります。フォームを開いた段階でどのような入力項目があるかを先に確認し、回答を手元で用意してから改めて入力すると効率的です。特に経費明細の入力は項目数が多くなりがちなため、あらかじめ表計算ソフトで整理してから転記する方法がよく使われています。</p>
+<p>提出ボタンを押した後、受付完了通知が届くまで数分かかることがあります。メール通知が届かない場合は、jGrants内のステータス画面で「受付済み」になっているか確認します。「下書き保存」のままでは提出が完了していないため注意します。提出と保存の違いをしっかり確認することが、申請後のトラブルを防ぐうえで大切です。</p>
+
+<h2 id="h2-4">電子申請で注意したいポイント</h2>
+
+<p>電子申請には紙申請にはないルールがあります。jGrantsでの申請作業を進める中で、多くの方が直面しやすいポイントを以下にまとめました。事前に把握しておくだけで、作業がかなりスムーズになります。</p>
+
+<h3>ファイルサイズ・形式の制限</h3>
+<p>添付書類は1ファイルあたりのサイズ上限が設定されていることが一般的です。写真・図表が多い事業計画書はPDFの圧縮で対応します。形式はPDF・PDFファイル統合が基本ですが、補助金によってExcel・Wordも受け付けることがあります。</p>
+<p>PDFのサイズが上限を超える場合は、Adobeの圧縮ツールや各種圧縮ソフトを使ってファイルサイズを小さくすることが可能です。また、印刷する際の解像度を「低解像度」に設定して再度PDFとして出力する方法も、ファイルサイズを抑えるうえで有効なことがあります。複数の書類を1ファイルにまとめている場合は、分割して個別にアップロードすることで上限を回避できるケースもあります。</p>
+<p>どのような形式が受け付けられるかは補助金ごとに公募要領で明示されていることが多いです。指定形式以外のファイルをアップロードすると形式審査で差し戻しになることがあるため、公募要領の添付書類一覧を最初に確認することが大切です。</p>
+
+<h3>締切時刻と混雑</h3>
+<p>jGrantsは公募締切日の終盤に申請が集中し、システムが混雑することがあります。締切直前のアクセスは避け、余裕を持って提出します。一度提出した後でも修正可能な期間があることがありますが、頼りすぎないようにします。</p>
+<p>過去の補助金では、締切当日にアクセスが集中してサーバーが重くなり、通常より操作に時間がかかるケースが報告されたことがあります。締切時刻は厳格に適用されることが多いため、ギリギリまで作業を残さずに、少なくとも数日前には申請を完了させておくことが現実的な対応です。</p>
+
+<h3>セッション切れ</h3>
+<p>長時間入力していると自動ログアウトされることがあります。入力途中でこまめに一時保存を活用します。セッション切れが起きると、それまで入力した内容が失われることがあるため、入力作業を始める前にどの項目を入力するかをリストアップしておき、短時間で集中して入力する方法が有効です。</p>
+<p>jGrantsには申請内容を「下書き保存」できる機能があります。長い項目を入力する際は、途中で保存を挟みながら進めることで、万一セッションが切れた場合にも作業の損失を最小限に抑えられます。ブラウザのタブを長時間開いたまま放置すると自動的にログアウトされることがあるため、操作の合間に定期的にページを操作して接続を維持することも一つの方法です。</p>
+
+<h2 id="h2-5">申請後の流れ</h2>
+<p>jGrants申請後の流れは次のように進みます。申請が完了した段階は、補助金を受け取るための出発点にすぎません。採択から実績報告・補助金の入金まで、複数の手続きがjGrants上で続くことになります。</p>
+<p>申請提出から採択発表まで、補助金によって数か月かかることがあります。この間に事務局から書類の補正依頼が届くことがあるため、jGrantsのステータス変更をこまめに確認する習慣をつけておきます。補正依頼には期限が設定されていることが多く、気づかずに期限を過ぎると審査から外れることがあります。</p>
+<ul class="type-list">
+<li><strong>受付完了</strong>jGrants内のステータスとメール通知で受付確認</li>
+<li><strong>形式審査</strong>事務局による書類チェック</li>
+<li><strong>採択発表</strong>jGrantsのお知らせ・補助金事務局サイトで発表</li>
+<li><strong>交付申請</strong>採択者のみ、jGrantsで交付申請手続き</li>
+<li><strong>交付決定通知</strong>jGrantsで通知受領、これ以降に発注可能</li>
+<li><strong>事業実施・実績報告</strong>事業期間内に実施し、jGrantsで実績報告書を提出</li>
+<li><strong>補助金支払</strong>事務局から指定口座に振込</li>
+</ul>
+<p>採択後の手続きもすべてjGrantsで完結します。交付申請・実績報告・補助金請求のそれぞれに提出期限があるため、採択が決まったら次の手続きの期限をカレンダーに登録しておくと期限超過を防げます。</p>
+<p>特に気をつけたいのが「交付決定通知」のタイミングです。採択されたからといってすぐに発注・購入を進めてはいけません。交付決定通知を受け取る前に発注した経費は補助対象外となることがあるため、このタイミングだけは必ず確認してから事業に着手することが大切です。採択と交付決定は別の手続きであることを理解しておくと、後から経費が認められないというトラブルを防ぐことができます。</p>
+<p>実績報告では、事業期間中に実際にかかった経費の証拠書類（領収書・納品書・振込明細など）をjGrants上にアップロードします。申請時に計上した経費と実際にかかった経費が異なる場合は、補助対象外の扱いになることがあります。事業を始める前に、どの経費が補助対象になるかを公募要領で確認し、必要な書類を保管しておくことが実績報告をスムーズに進める準備になります。</p>
+</div>
+<section class="faq-section" id="faq"><h2>よくある質問</h2><div class="faq-q">Q. GビズIDが間に合わない場合の対処法は？</div><div class="faq-a">公募締切に間に合わないと申請できません。マイナンバーカードを使ったオンライン申請でGビズIDの早期取得を試みる方法があります。</div><div class="faq-q">Q. 申請内容を後で修正できますか？</div><div class="faq-a">公募期間中であれば修正できることが多くなっていますが、公募によっては修正回数の上限が設定されることがあります。</div><div class="faq-q">Q. PDFが大きすぎてアップロードできない場合は？</div><div class="faq-a">PDFを圧縮するか、複数ファイルに分割します。圧縮ソフトやプリンタドライバの低解像度PDF出力を活用します。</div><div class="faq-q">Q. 添付書類をWordで提出してもよいですか？</div><div class="faq-a">原則PDFが推奨されます。公募要領で形式指定があれば、それに従います。</div><div class="faq-q">Q. 申請完了の確認方法は？</div><div class="faq-a">jGrantsの申請ステータス画面と、登録メールアドレス宛ての受付通知メールで確認できます。</div></section>
+<div class="supervisor-box"><div class="sv-text"><div class="sv-name"></div><div>行政書士／認定支援機関。補助金採択件数157件・採択総額26億円超。中小企業の事業計画策定と補助金申請を支援。</div><div style="margin-top:6px;color:#666;font-size:13px">公開日：2026-05-16／更新日：2026-05-16</div></div></div>
+<section class="related-section"><h2>関連記事</h2><div class="related-cards"><a class="related-card" href="https://fp-1.info/hojokin/2026/05/17/gbizid-guide/"><div class="rc-cat">補助金獲得</div><div class="rc-title">GビズIDの取得方法と補助金申請への活用</div></a><a class="related-card" href="https://fp-1.info/hojokin/2026/05/17/hojo-shorui-list/"><div class="rc-cat">補助金獲得</div><div class="rc-title">補助金申請に必要な書類リスト｜事前に揃えておくものまとめ</div></a></div></section>
+<!-- CORE OFFER CTA (統一) -->
+<section class="blog-core-offer">
+  <h2>このページを訪れた方はこれらのコンテンツを入手しています。</h2>
+  <div class="blog-core-offer-cards">
+    <a href="https://www.funnel-build.com/joseikinguide-opt" class="blog-core-card" target="_blank" rel="noopener">
+      <div class="blog-core-thumb">
+        
+        <img src="/hojokin/wp-content/uploads/2026/05/guidebook-v5-scaled.jpg" alt="助成金獲得ガイドブック">
+        <div class="blog-core-thumb-label">無料ガイドブック｜助成金獲得</div>
+      </div>
+      <div class="blog-core-card-body">
+        <h3>助成金獲得ガイドブック</h3>
+        <p>助成金の制度がわからない方へ。ガイドブック・助成金リスト・準備書類リスト・GPT質問ボットを無料進呈。157件超の採択実績をもとに制作。</p>
+        <span class="blog-core-card-cta">今すぐ無料で受け取る</span>
+      </div>
+    </a>
+    <a href="https://www.funnel-build.com/opt-webinar-7model" class="blog-core-card" target="_blank" rel="noopener">
+      <div class="blog-core-thumb">
+        
+        <img src="/hojokin/wp-content/uploads/2026/05/webinar-v5-scaled.jpg" alt="補助金活用型7つのビジネスモデル構築ウェビナー">
+        <div class="blog-core-thumb-label">無料ウェビナー｜7つのビジネスモデル</div>
+      </div>
+      <div class="blog-core-card-body">
+        <h3>補助金活用型7つのビジネスモデル構築ウェビナー</h3>
+        <p>補助金を活用した7つのビジネスモデルを公開するライブ無料トレーニング。補助金で事業を安定・拡大する具体的な仕組みを学べます。</p>
+        <span class="blog-core-card-cta">今すぐ視聴登録する</span>
+      </div>
+    </a>
+    <a href="https://www.funnel-build.com/ht3" class="blog-core-card" target="_blank" rel="noopener">
+      <div class="blog-core-thumb">
+        
+        <img src="/hojokin/wp-content/uploads/2026/05/manual-v5-scaled.jpg" alt="補助金獲得実務マニュアル">
+        <div class="blog-core-thumb-label">無料マニュアル｜補助金獲得実務</div>
+      </div>
+      <div class="blog-core-card-body">
+        <h3>補助金獲得実務マニュアル</h3>
+        <p>47ページのマニュアル＋500分超の動画講座＋事業計画テンプレート3種＋AI活用事例42個。1,000人超が読んだ実務書を無料でお届け。</p>
+        <span class="blog-core-card-cta">今すぐ実務マニュアルを受け取る</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+</article>
+    <div class="supervisor-box" id="supervisor">
+      <img src="/hojokin/wp-content/uploads/2026/05/akutsu-portrait.jpg" alt="阿久津和宏" class="supervisor-avatar" style="border-radius:50%;object-fit:cover;width:80px;height:80px;flex-shrink:0;">
+      <div class="supervisor-info">
+        <div class="supervisor-label">著者</div>
+        <div class="supervisor-name">担当者</div>
+        <div class="supervisor-title">行政書士・経営革新等支援機関（認定支援機関）｜Well Consultant合同会社 代表</div>
+        <p class="supervisor-bio">Well Consultant合同会社代表。行政書士として補助金申請支援に特化した実務を展開。中小企業庁認定の経営革新等支援機関として、ものづくり補助金・持続化補助金・IT導入補助金など主要補助金の申請書作成から採択後フォローまでを一貫してサポート。補助金採択件数157件・採択総額26億円超の実績をもとに、補助金コンサルとして独立・継続するためのノウハウを発信しています。</p>
+      </div>
+    </div>
+</div>
+<aside class="blog-sidebar">
+  <div class="sidebar-section-title">補助金記事を読む目的で選ぶ</div>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-1" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-apply-2373.png" alt="補助金を申請したい人へ">
+      <span class="sidebar-genre-badge orange">補助金を申請したい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>補助金の選び方・申請手順・採択のコツを実務レベルで解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-2" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-support-2357.png" alt="補助金をサポートしたい人へ">
+      <span class="sidebar-genre-badge navy">補助金をサポートしたい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>支援ビジネスの立上げ・集客・報酬設計を実例ベースで解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://fp-1.info/hojokin/blog-list/#genre-3" class="sidebar-genre-card">
+    <div class="sidebar-genre-img">
+      <img src="/hojokin/wp-content/uploads/2026/05/blog-sell-2360.png" alt="補助金を使って売りたい人へ">
+      <span class="sidebar-genre-badge green">補助金を使って売りたい人へ</span>
+    </div>
+    <div class="sidebar-genre-body">
+      <p>補助金経由で顧客を獲得する販路拡大の手法を解説</p>
+      <span class="sidebar-genre-link">このジャンルを読む →</span>
+    </div>
+  </a>
+  <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener" class="sidebar-feed"><img src="/hojokin/wp-content/uploads/2026/05/hojo-feed-thumb.png" alt="補助金フィード"><span class="sidebar-feed-label">補助金フィードを見る →</span></a>
+  <a href="https://fp-1.info/hojokin/#cta" class="sidebar-consult">無料相談はこちら →</a>
+</aside>
+</div>
+<footer class="custom-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="https://fp-1.info/hojokin/">トップ</a>
+      <a href="https://fp-1.info/hojokin/#core-offer">無料コンテンツ</a>
+      <a href="https://fp-1.info/hojokin/blog-list/">ブログ</a>
+      <a href="https://fp-1.info/hojokin/#seminar-archive">勉強会</a>
+      <a href="https://fp-1.info/hojokin/#about">プロフィール</a>
+      <a href="https://hojokin.well-c.biz/" target="_blank" rel="noopener">補助金フィード</a>
+      <a href="https://fp-1.info/hojokin/#cta">お問い合わせ</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="https://fp-1.info/hojokin/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://fp-1.info/hojokin/tokusho/" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
+    </div>
+    <p class="footer-copy">© 2026 Well Consultant. All rights reserved.</p>
+  </div>
+</footer>
+<script>/* MOBILE_MENU_v1 */
+(function(){var b=document.querySelector('.nav-hamburger');var m=document.querySelector('.mobile-menu');if(b&&m){b.addEventListener('click',function(e){e.preventDefault();m.classList.toggle('open');});Array.prototype.forEach.call(m.querySelectorAll('a'),function(a){a.addEventListener('click',function(){m.classList.remove('open');});});}})();
+</script>
+<script>(function(){
+function k(){
+  /* HTMLとBODYの上余白を強制0（WP admin bar対策） */
+  document.documentElement.style.setProperty('margin-top','0','important');
+  document.documentElement.style.setProperty('padding-top','0','important');
+  document.body.style.setProperty('margin-top','0','important');
+  document.body.style.setProperty('padding-top','0','important');
+  /* wp-site-blocks > 子要素の上マージンを強制0 */
+  var wsb=document.querySelector('.wp-site-blocks');
+  if(wsb){wsb.style.setProperty('margin-top','0','important');wsb.style.setProperty('padding-top','0','important');Array.prototype.forEach.call(wsb.children,function(c){c.style.setProperty('margin-top','0','important');c.style.setProperty('margin-block-start','0','important');});}
+  /* H2「投稿をさらに読み込む」を非表示（WPテンプレが出す見出し） */
+  document.querySelectorAll('h2').forEach(function(h){if(h.textContent.indexOf('投稿をさらに読み込')!==-1){h.style.setProperty('display','none','important');var nx=h.nextElementSibling;if(nx&&nx.classList&&nx.classList.contains('wp-block-query'))nx.style.setProperty('display','none','important');}});
+  ['header.wp-block-template-part','.wp-site-blocks > header','.wp-block-template-part[data-area="header"]','.wp-block-post-author-name','.wp-block-group.has-accent-4-color','.wp-block-post-title','h1.wp-block-post-title','nav[aria-label="投稿ナビゲーション"]','.wp-block-post-navigation-link','.wp-block-query','#supervisor'].forEach(function(s){document.querySelectorAll(s).forEach(function(e){if(!e.classList.contains('page-layout')&&!e.classList.contains('main-wrap')&&!e.classList.contains('blog-sidebar'))e.style.setProperty('display','none','important');});});
+  var pl=document.querySelector('.page-layout');
+  var mw=document.querySelector('.main-wrap');
+  var sp=document.querySelector('.blog-nav-spacer');
+  var bs=document.querySelector('.blog-sidebar');
+  if(pl){pl.style.setProperty('display','grid','important');pl.style.setProperty('grid-template-columns','minmax(0,1fr) 260px','important');pl.style.setProperty('gap','32px','important');pl.style.setProperty('align-items','start','important');pl.style.setProperty('width','100%','important');pl.style.setProperty('max-width','1160px','important');pl.style.setProperty('margin','0 auto','important');pl.style.setProperty('padding','0 20px 60px','important');pl.style.setProperty('box-sizing','border-box','important');pl.style.setProperty('overflow','visible','important');}
+  if(mw){mw.style.setProperty('min-width','0','important');mw.style.setProperty('visibility','visible','important');mw.style.setProperty('opacity','1','important');mw.style.setProperty('overflow','visible','important');}
+  if(sp){sp.style.setProperty('display','none','important');}
+  if(bs){bs.style.setProperty('width','260px','important');bs.style.setProperty('position','sticky','important');bs.style.setProperty('top','78px','important');bs.style.setProperty('align-self','start','important');bs.style.setProperty('max-height','calc(100vh - 90px)','important');bs.style.setProperty('overflow-y','auto','important');}
+  /* 親祖先のoverflowをvisible化（stickyの効果を阻害させない） */
+  var anc = bs ? bs.parentElement : null;
+  while(anc && anc !== document.body){
+    anc.style.setProperty('overflow','visible','important');
+    anc = anc.parentElement;
+  }
+}
+if(document.readyState!=='loading')k();else document.addEventListener('DOMContentLoaded',k);
+window.addEventListener('load',k);
+})();</script>
+
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>お問い合わせありがとうございます</title>
+<style>
+:root{--fg:#222;--muted:#666;--accent:#c0392b;--maxw:760px;}
+*{box-sizing:border-box;}
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;line-height:1.8;color:var(--fg);background:#fff;}
+.site-header{background:#fff;border-bottom:1px solid #eee;padding:14px 20px;position:sticky;top:0;z-index:10;}
+.site-header a{color:var(--fg);text-decoration:none;font-weight:700;}
+.site-footer{margin-top:60px;padding:30px 20px;background:#f7f7f7;color:var(--muted);font-size:13px;text-align:center;}
+.site-footer a{color:var(--muted);}
+main.article{max-width:var(--maxw);margin:0 auto;padding:40px 20px;}
+main.article h1{font-size:1.7em;line-height:1.4;margin-bottom:.3em;}
+main.article h2{font-size:1.3em;margin-top:2em;border-left:4px solid var(--accent);padding-left:.5em;}
+main.article h3{font-size:1.1em;margin-top:1.5em;}
+main.article p{margin:1em 0;}
+main.article a{color:#1a5276;}
+main.article img{max-width:100%;height:auto;}
+.hojokin-lead{font-size:1.1em;font-weight:600;background:#fdf2f0;padding:16px;border-radius:8px;}
+.hojokin-summary{background:#f4f8fb;padding:16px 20px;border-radius:8px;margin:1.5em 0;}
+</style>
+</head>
+<body>
+<header class="site-header"><a href="/">補助金・助成金活用型経営 | Well Consultant</a></header>
+<main class="article">
+
+<style>
+
+/* WPテーマのcontent-size/widthを全幅に */
+:root, html, body {
+  --wp--style--global--content-size: 100% !important;
+  --wp--style--global--wide-size: 100% !important;
+  --wp--style--root--padding-top: 0 !important;
+  --wp--style--root--padding-right: 0 !important;
+  --wp--style--root--padding-bottom: 0 !important;
+  --wp--style--root--padding-left: 0 !important;
+}
+body, body.page, body.home { margin:0 !important; padding:0 !important;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif !important;
+  font-size:16px !important; font-weight:400 !important; line-height:1.6 !important;
+  letter-spacing:0 !important; color:#222 !important;
+}
+/* WPブロック要素のみ全幅化（ローカルCSSの max-width には触らない） */
+.wp-site-blocks,
+.wp-site-blocks > main,
+main.wp-block-group,
+.wp-block-group.has-global-padding,
+.wp-block-post-content,
+.entry-content,
+.wp-block-group.alignfull,
+.wp-block-group-is-layout-constrained,
+.wp-block-post-content-is-layout-constrained,
+.wp-block-html {
+  max-width:100% !important; width:100% !important;
+  margin:0 !important; padding:0 !important;
+}
+.is-layout-constrained > .wp-block-group:not(.alignwide):not(.alignfull),
+.is-layout-constrained > .wp-block-html {
+  max-width:100% !important;
+  margin-left:0 !important; margin-right:0 !important;
+  padding-left:0 !important; padding-right:0 !important;
+}
+.has-global-padding,
+.has-global-padding > .alignfull {
+  padding-left:0 !important; padding-right:0 !important;
+}
+/* テーマヘッダー類非表示 */
+.wp-block-post-title, .entry-header, .entry-title,
+header.entry-header, .wp-block-template-part header,
+header.wp-block-template-part, .wp-site-blocks > header,
+.wp-block-site-title, .wp-block-navigation,
+.wp-block-template-part[data-area="header"] { display:none !important; }
+/* WPテーマフッター非表示 */
+.wp-site-blocks>footer, footer.wp-block-template-part,
+.wp-block-template-part[data-area="footer"],
+footer:not(.custom-footer) { display:none !important; }
+/* WP adminbar・上隙間リセット */
+#wpadminbar, #wpadminbar * { display:none !important; }
+html { margin-top:0 !important; }
+/* 投稿ナビゲーション非表示 */
+.post-navigation,.posts-navigation,.nav-previous,.nav-next,
+.wp-block-query-pagination,.more-link { display:none !important; }
+
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;color:#222;line-height:1.75;background:#fafafa}
+.wrap{max-width:880px;margin:0 auto;padding:60px 24px 80px}
+.thanks-hero{text-align:center;padding:40px 20px 32px;background:#fff;border-radius:10px;border:1px solid #eee;margin-bottom:32px}
+.thanks-mark{width:72px;height:72px;border-radius:50%;background:#d35400;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px}
+.thanks-mark svg{width:38px;height:38px;color:#fff}
+.thanks-hero h1{font-size:26px;color:#222;margin-bottom:14px;letter-spacing:.04em}
+.thanks-hero p{font-size:15px;color:#555;line-height:1.85;max-width:620px;margin:0 auto}
+.section{background:#fff;border:1px solid #eee;border-radius:10px;padding:32px 28px;margin-bottom:24px}
+.section h2{font-size:20px;color:#222;margin-bottom:8px;letter-spacing:.04em;border-left:4px solid #d35400;padding-left:12px}
+.section p.lead{font-size:14px;color:#666;margin-bottom:20px}
+.cal-frame{position:relative;width:100%;background:#fff;border-radius:8px;overflow:hidden}
+.cal-frame iframe{display:block;width:100%;min-height:780px;border:0}
+.next-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.next-actions a{display:block;background:#fff;border:1px solid #ddd;border-radius:8px;color:#222;text-decoration:none;overflow:hidden;transition:.15s;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.next-actions a:hover{box-shadow:0 4px 16px rgba(0,0,0,0.13);transform:translateY(-2px)}
+.next-actions a img{width:100%;height:140px;object-fit:cover;display:block}
+.next-actions a span{display:block;padding:12px 14px;font-size:13px;font-weight:700;color:#1a3a5c;line-height:1.45}
+.foot{text-align:center;font-size:12px;color:#999;margin-top:32px}
+@media(max-width:680px){
+  .wrap{padding:32px 16px 60px}
+  .thanks-hero h1{font-size:20px}
+  .section{padding:24px 18px}
+  .next-actions{grid-template-columns:1fr}
+}
+
+</style>
+<div class="wrap">
+  <div class="thanks-hero">
+    <div class="thanks-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h1>お問い合わせありがとうございます</h1>
+    <p>ご入力内容を確認いたしました。担当よりご連絡いたします。<br>合わせて、下記カレンダーから無料相談のご予約が可能です。ご都合の良い日時をお選びください。</p>
+  </div>
+
+  <div class="section">
+    <h2>今すぐ席を確保してください</h2>
+    <p class="lead">補助金活用・申請支援・補助金支援ビジネス構築・補助金対応製品の販路開拓など、ご相談内容に応じて担当が直接お話しいたします。</p>
+    <div class="cal-frame">
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2nJnw6UrNZajn488eZ-GjxO3rvSZ2zKWE-1qDQ4Ld8eRoWxLyujWD2BRuSXea078phLTlvHLsy?gv=true" style="border:0" width="100%" height="780" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>受け取れる無料コンテンツ</h2>
+    <p class="lead">ご相談前に、以下の無料コンテンツで補助金の全体像を整理しておくと、相談がよりスムーズです。</p>
+    <div class="next-actions">
+      <a href="https://www.funnel-build.com/joseikinguide-opt" target="_blank" rel="noopener">
+        <img src="/hojokin/wp-content/uploads/2026/05/guidebook-v5-scaled.jpg" alt="助成金獲得ガイドブック">
+        <span>助成金獲得ガイドブック（無料）</span>
+      </a>
+      <a href="https://www.funnel-build.com/opt-webinar-7model" target="_blank" rel="noopener">
+        <img src="/hojokin/wp-content/uploads/2026/05/webinar-v5-scaled.jpg" alt="補助金活用型7つのビジネスモデル構築ウェビナー">
+        <span>補助金活用型7つのビジネスモデル構築ウェビナー（無料）</span>
+      </a>
+      <a href="https://www.funnel-build.com/ht3" target="_blank" rel="noopener">
+        <img src="/hojokin/wp-content/uploads/2026/05/manual-v5-scaled.jpg" alt="補助金獲得実務マニュアル">
+        <span>補助金獲得実務マニュアル（無料）</span>
+      </a>
+      <a href="https://fp-1.info/hojokin/blog-list/">
+        <img src="/hojokin/wp-content/uploads/2026/05/blog-apply-2403.png" alt="補助金ブログ">
+        <span>補助金ブログを読む</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="foot">© 2026 Well Consultant. All rights reserved.</div>
+</div>
+<script>
+(function(){function k(){['header.wp-block-template-part','.wp-site-blocks > header','.wp-block-template-part[data-area="header"]'].forEach(function(s){document.querySelectorAll(s).forEach(function(e){e.remove();});});}
+if(document.readyState!=='loading')k();else document.addEventListener('DOMContentLoaded',k);})();
+</script>
+
+
+</main>
+<footer class="site-footer"><p>&copy; Well Consultant合同会社</p></footer>
+</body>
+</html>
